@@ -102,7 +102,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_2__);
 
 
-
+ //dependencies devDependencies
+//babel
+//build
+//html script
 
 var App = function App() {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_test_js__WEBPACK_IMPORTED_MODULE_1__["default"], null);
@@ -28641,7 +28644,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var TestPage = function TestPage() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Test");
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Test1");
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (TestPage);

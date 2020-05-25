@@ -1,7 +1,7 @@
-import React, {Component} from "react";
+import React from "react";
 
 const TestPage = () =>(
-    <div>Test</div>
+    <div>Test1</div>
 )
 
 export default TestPage
