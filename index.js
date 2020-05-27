@@ -6,6 +6,8 @@ import { render } from "react-dom";
 //что делать с аутпутом если есть несколько энтри
 //sass
 //ревращатор js в java
+//
+//
 
 const App = () => (
     <TestPage/>
