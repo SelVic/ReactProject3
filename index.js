@@ -8,6 +8,7 @@ import { render } from "react-dom";
 //ревращатор js в java
 //
 //
+//
 
 const App = () => (
     <TestPage/>
