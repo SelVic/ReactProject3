@@ -2,7 +2,9 @@
   "name": "movieproj",
   "version": "1.0.0",
   "main": "/index.js",
-  "dependencies": {},
+  "dependencies": {
+    "reach-router": "0.0.0"
+  },
   "devDependencies": {
     "@babel/core": "^7.9.6",
     "@babel/preset-env": "^7.9.6",
