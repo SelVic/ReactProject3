@@ -106,6 +106,9 @@ __webpack_require__.r(__webpack_exports__);
 //что делать с аутпутом если есть несколько энтри
 //sass
 //ревращатор js в java
+//
+//
+//
 
 var App = function App() {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_test_js__WEBPACK_IMPORTED_MODULE_1__["default"], null);

@@ -1,13 +1,9 @@
-const http = require('http')
-const port = 3000
-const requestHandler = (request, response) => {
-    console.log(request.url)
-    response.end('Hello Server!')
-}
-const server = http.createServer(requestHandler)
-server.listen(port, (err) => {
-    if (err) {
-        return console.log('error', err)
-    }
-    console.log({port})
-})
+let express = require('express');
+let app = express();
+
+app.get('/', function(req, res) {
+    res.sendFile('index.html',[{root:__dirname}]);
+});
+
+app.listen(3000);
+console.log('http://localhost:3000');
