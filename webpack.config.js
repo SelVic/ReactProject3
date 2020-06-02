@@ -11,6 +11,9 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'script.js'
+        //при нескольких энтри
+        // filename: '[name].js',
+        // path: __dirname + '/dist'
     },
     module: {
         rules: [
