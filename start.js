@@ -3,12 +3,36 @@ let path = require('path');
 let app = express();
 
 app.use('/dist', express.static(path.join(__dirname, 'dist')));
-app.use('/styles', express.static(path.join(__dirname, 'css')));
+
+app.use('/styles', express.static(path.join(__dirname, 'styles')));
+
 app.use('/images', express.static(path.join(__dirname, 'images')));
 
 app.get('/', function(req, res) {
     res.sendFile(__dirname + '/index.html');
 });
 
+app.get('/rat', function (req, res, next) {
+    next()
+})
+
+app.get('/vodka', function (req, res, next) {
+    return res.send("otvet");
+    console.log('privet')
+})
+
+app.get('/error', function (req, res, next) {
+    next('404040')
+})
+
+app.get('*', function (req, res, next) {
+    console.log(`404 ${req.url}`)
+    return res.sendStatus(404);
+})
+
+app.use(function(err, req, res, next){
+    console.log("Ошибка", err)
+    return res.sendStatus(503);
+})
 app.listen(3000);
 console.log('http://localhost:3000');

@@ -21,6 +21,7 @@
     "webpack-cli": "^3.3.11"
   },
   "scripts": {
-    "build": "webpack --watch"
+    "build": "webpack --watch",
+    "start": "node start"
   }
 }

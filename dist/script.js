@@ -99,11 +99,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 
 
-var TestPage = function TestPage() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Test1");
+var Pager = function Pager(props) {
+  var pages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  var maxVisible = 3;
+  var current = 1;
+  var firstPage = 1;
+
+  for (var i = 0; i < maxVisible; i++) {
+    //??
+    pages.push();
+  }
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "123");
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (TestPage);
+/* harmony default export */ __webpack_exports__["default"] = (Pager);
 
 /***/ }),
 
@@ -123,7 +133,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_2__);
 
 
-
+ //тимур шемсединов ютуб ссылка в вотсе
+//дописать request header в запрос
+//router express
 
 var App = function App() {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Pager_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], null);
