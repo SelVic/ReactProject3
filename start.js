@@ -24,7 +24,7 @@ app.get('/vodka', function (req, res, next) {
 app.get('/error', function (req, res, next) {
     next('404040')
 })
-
+//
 app.get('*', function (req, res, next) {
     console.log(`404 ${req.url}`)
     return res.sendStatus(404);
