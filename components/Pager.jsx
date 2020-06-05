@@ -6,10 +6,14 @@ const Pager = props => {
     let maxVisible = 3;
     let current = 1;
     let firstPage = 1;
-    let sides = current +-2;
+    let visible = 5;
+    let sides = visible/2
 
     // let PrevPage;
     // let NextPage;
+    if (firstPage ) {
+        maxVisible = Math.abs(sides - firstPage) + 1;
+    }
 
     //подумать над счетом середины
     //окргуление?
