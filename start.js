@@ -17,7 +17,7 @@ app.get('/rat', function (req, res, next) {
 })
 
 app.get('/vodka', function (req, res, next) {
-    return res.send("otvet");
+    return res.send("otvet")
     console.log('privet')
 })
 
@@ -25,6 +25,9 @@ app.get('/error', function (req, res, next) {
     next('404040')
 })
 //
+app.get ('/test', function (req,res, next) {
+    req.header('Pragma')
+})
 //
 app.get('*', function (req, res, next) {
     console.log(`404 ${req.url}`)
@@ -35,5 +38,7 @@ app.use(function(err, req, res, next){
     console.log("Ошибка", err)
     return res.sendStatus(503);
 })
+
+
 app.listen(3000);
 console.log('http://localhost:3000');

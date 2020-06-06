@@ -104,13 +104,26 @@ var Pager = function Pager(props) {
   var maxVisible = 3;
   var current = 1;
   var firstPage = 1;
+  var visible = 5;
+  var sides = visible / 2; // let PrevPage;
+  // let NextPage;
+
+  if (firstPage) {
+    maxVisible = Math.abs(sides - firstPage) + 1;
+  } //подумать над счетом середины
+  //окргуление?
+
+
+  if (current > sides) firstPage = current - sides; // else if ()
 
   for (var i = 0; i < maxVisible; i++) {
     //??
     pages.push();
   }
 
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "123");
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, pages.map(function (p, i) {
+    return p;
+  }));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Pager);
