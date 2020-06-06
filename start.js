@@ -26,7 +26,13 @@ app.get('/error', function (req, res, next) {
 })
 //
 app.get ('/test', function (req,res, next) {
-    req.header('Pragma')
+    return res.send(req.header('Pragma'))
+    console.log(req.header('Content-type'))
+})
+app.get ('/test2', function (req,res, next) {
+    res.set('Content-type', 'text-html')
+    return res.send(req.header('Content-type'))
+    console.log(req.header('Content-type'))
 })
 //
 app.get('*', function (req, res, next) {
