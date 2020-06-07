@@ -13,7 +13,8 @@ const Pager = props => {
     if (firstPage ) {
         maxVisible = Math.abs(sides - firstPage) + 1;
     }
-
+    //
+    //
     //подумать над счетом середины
     //окргуление?
     if (current > sides)
