@@ -7,7 +7,7 @@ const Pager = props => {
     let current = 1;
     let firstPage = 1;
     let visible = 5;
-    let sides = visible/2
+    let sides = Math.floor(visible / 2)
     let PrevPage;
     let NextPage;
     if (firstPage ) {

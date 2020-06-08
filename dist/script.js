@@ -107,7 +107,7 @@ var Pager = function Pager(props) {
   var current = 1;
   var firstPage = 1;
   var visible = 5;
-  var sides = visible / 2;
+  var sides = Math.floor(visible / 2);
   var PrevPage;
   var NextPage;
 
@@ -150,7 +150,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_2__);
 
 
- //router express
+
 
 var App = function App() {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Pager_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], null);
