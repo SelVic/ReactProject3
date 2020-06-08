@@ -1,37 +1,32 @@
 import React from "react";
+import {Link} from "@reach/router";
 
 const Pager = props => {
-    let pages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-    let maxVisible = 3;
+    let pages = [1,2,3,4,5,6,7,8,9,10];
+    let total = 10;
     let current = 1;
     let firstPage = 1;
     let visible = 5;
     let sides = visible/2
-
-    // let PrevPage;
-    // let NextPage;
+    let PrevPage;
+    let NextPage;
     if (firstPage ) {
-        maxVisible = Math.abs(sides - firstPage) + 1;
+        visible = Math.abs(sides - firstPage) + 1;
     }
-    //
-    //
-    //подумать над счетом середины
-    //окргуление?
+
     if (current > sides)
         firstPage = current - sides;
-    // else if ()
 
-    for (let i=0; i < maxVisible; i++ ){
-        //??
-        pages.push()
-    }
+    // for (let i=0; i < visible; i++ ){
+    //     pages.push(i + firstPage)
+    // }
     return (
         <div>
-            {/*PrevPage*/}
             {
-                pages.map((p,i) => p)
+                pages.map((p, i) => <Link to='/'>{p}{<a onClick={current => i}></a>}{"   "}</Link>)
             }
         </div>
+
     )
 }
 

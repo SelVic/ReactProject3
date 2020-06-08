@@ -3,6 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="2a19540e-fbdb-4d10-99fa-0c508c818ad2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Pager.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Pager.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/script.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/script.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +39,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../tasks" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2019.3.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
@@ -110,6 +115,7 @@
       <workItem from="1591112391964" duration="12603000" />
       <workItem from="1591310998860" duration="1529000" />
       <workItem from="1591455480658" duration="3176000" />
+      <workItem from="1591617539575" duration="4610000" />
     </task>
     <servers />
   </component>
@@ -121,26 +127,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="414" y="176" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1590428876804" />
-    <state x="740" y="276" key="FileChooserDialogImpl" timestamp="1591461253653">
+    <state x="740" y="276" key="FileChooserDialogImpl" timestamp="1591624619491">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="276" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1591461253653" />
-    <state width="1898" height="308" key="GridCell.Tab.0.bottom" timestamp="1591457205509">
+    <state x="740" y="276" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1591624619491" />
+    <state width="1898" height="308" key="GridCell.Tab.0.bottom" timestamp="1591629311374">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1898" height="308" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591457205509" />
-    <state width="1898" height="308" key="GridCell.Tab.0.center" timestamp="1591457205509">
+    <state width="1898" height="308" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591629311374" />
+    <state width="1898" height="308" key="GridCell.Tab.0.center" timestamp="1591629311374">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1898" height="308" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591457205509" />
-    <state width="1898" height="308" key="GridCell.Tab.0.left" timestamp="1591457205509">
+    <state width="1898" height="308" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591629311374" />
+    <state width="1898" height="308" key="GridCell.Tab.0.left" timestamp="1591629311374">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1898" height="308" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591457205509" />
-    <state width="1898" height="308" key="GridCell.Tab.0.right" timestamp="1591457205509">
+    <state width="1898" height="308" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591629311374" />
+    <state width="1898" height="308" key="GridCell.Tab.0.right" timestamp="1591629311374">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1898" height="308" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591457205509" />
+    <state width="1898" height="308" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591629311374" />
     <state width="1898" height="342" key="GridCell.Tab.1.bottom" timestamp="1591123383850">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
