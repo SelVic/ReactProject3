@@ -6,9 +6,11 @@
       <change beforePath="$PROJECT_DIR$/components/Pager.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Pager.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/script.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/script.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/script.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@babel/plugin-proposal-class-properties/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@babel/plugin-proposal-class-properties/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +26,7 @@
         <option value="package.json" />
         <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -41,6 +44,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../tasks" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2019.3.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
@@ -116,7 +120,7 @@
       <workItem from="1591112391964" duration="12603000" />
       <workItem from="1591310998860" duration="1529000" />
       <workItem from="1591455480658" duration="3176000" />
-      <workItem from="1591617539575" duration="6592000" />
+      <workItem from="1591617539575" duration="10940000" />
     </task>
     <servers />
   </component>
@@ -132,22 +136,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="276" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1591624619491" />
-    <state width="1898" height="308" key="GridCell.Tab.0.bottom" timestamp="1591631335793">
+    <state width="1898" height="308" key="GridCell.Tab.0.bottom" timestamp="1591638109748">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1898" height="308" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591631335793" />
-    <state width="1898" height="308" key="GridCell.Tab.0.center" timestamp="1591631335793">
+    <state width="1898" height="308" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591638109748" />
+    <state width="1898" height="308" key="GridCell.Tab.0.center" timestamp="1591638109748">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1898" height="308" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591631335793" />
-    <state width="1898" height="308" key="GridCell.Tab.0.left" timestamp="1591631335793">
+    <state width="1898" height="308" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591638109748" />
+    <state width="1898" height="308" key="GridCell.Tab.0.left" timestamp="1591638109748">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1898" height="308" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591631335793" />
-    <state width="1898" height="308" key="GridCell.Tab.0.right" timestamp="1591631335793">
+    <state width="1898" height="308" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591638109748" />
+    <state width="1898" height="308" key="GridCell.Tab.0.right" timestamp="1591638109748">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1898" height="308" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591631335793" />
+    <state width="1898" height="308" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591638109748" />
     <state width="1898" height="342" key="GridCell.Tab.1.bottom" timestamp="1591123383850">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
