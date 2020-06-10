@@ -1,6 +1,39 @@
-import React, {Component} from "react";
+import React, {Component, Fragment} from "react";
 import {Link} from "@reach/router";
 import {render} from 'react-dom';
+import qs from "qs";
+
+
+class Pager extends Component {
+
+
+
+    // updateCurr = (page) => {
+    //     this.setState({current : page})
+    // };
+    //yandex.ru/maps/city/5?id=4&category=gifts#hook
+    //path?query#hook
+
+    render() {
+        let pages = this.props.pages;
+        return (
+            <div>
+                {
+                    pages.map((p, i) => <Fragment key={p}><Link to={`/?page=${p}`}>{p}</Link>{"  "}</Fragment>)
+                }
+                <div className="myFont">{this.props.current} {this.props.total}</div>
+            </div>
+        )
+    }
+}
+
+Pager.defaultProps = {
+    pages :[1,2,3,4,5,6,7,8,9,10],
+    firstPage : 1,
+    visible : 5,
+    total : 10,
+    current : 1
+}
 
 // const Pager = props => {
 //     let pages = [1,2,3,4,5,6,7,8,9,10];
@@ -36,35 +69,5 @@ import {render} from 'react-dom';
 //     )
 // }
 
-class Pager extends Component {
-    state = {
-        pages :[1,2,3,4,5,6,7,8,9,10],
-        total : 10,
-        current : 1,
-        firstPage : 1,
-        visible : 5
-    };
 
-    updateCurr = (page) => {
-        this.setState({current : page})
-    };
-
-
-    render() {
-        let curr = this.state.current;
-        let pages = this.state.pages;
-        return (
-            <div>
-                {
-                    pages.map((p, i) => <span key={p} value = {p} onClick={e => e.currentTarget.value}><Link to='/'>{p}{"   "}</Link></span>)
-                }
-                <div>{curr}</div>
-            </div>
-        )
-    }
-}
-
-
-
-
-export default Pager
+export {Pager}
