@@ -12,7 +12,7 @@ class App extends Component{
     //setState в дидмаунте
     //что срабатывает когда хожу по ссылкам
     //доки REACT
-    //
+    // 
     //
     componentDidMount(){
         let {page} = qs.parse(location.search, {ignoreQueryPrefix: true});
