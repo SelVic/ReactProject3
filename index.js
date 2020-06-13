@@ -6,7 +6,8 @@ import qs from "qs";
 
 class App extends Component{
     state = {
-        page: 1
+        page: 1,
+        sides: 2
     };
 
     //setState в дидмаунте
