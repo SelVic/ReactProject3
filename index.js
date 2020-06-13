@@ -10,6 +10,7 @@ class App extends Component{
         sides: 2
     };
 
+    //
     //setState в дидмаунте
     //что срабатывает когда хожу по ссылкам
     //доки REACT
