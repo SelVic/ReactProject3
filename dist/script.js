@@ -271,7 +271,8 @@ var App = /*#__PURE__*/function (_Component) {
     _this = _super.call.apply(_super, [this].concat(args));
 
     _defineProperty(_assertThisInitialized(_this), "state", {
-      page: 1
+      page: 1,
+      sides: 2
     });
 
     return _this;
@@ -279,9 +280,12 @@ var App = /*#__PURE__*/function (_Component) {
 
   _createClass(App, [{
     key: "componentDidMount",
+    //
     //setState в дидмаунте
     //что срабатывает когда хожу по ссылкам
     //доки REACT
+    // 
+    //
     value: function componentDidMount() {
       var _qs$parse = qs__WEBPACK_IMPORTED_MODULE_3___default.a.parse(location.search, {
         ignoreQueryPrefix: true
