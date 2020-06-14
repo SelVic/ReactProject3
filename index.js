@@ -19,11 +19,16 @@ class App extends Component{
     componentDidMount(){
         let {page} = qs.parse(location.search, {ignoreQueryPrefix: true});
         this.page = page;
+        // this.setState({...page});
         console.log(page);
     }
-
-    // componentDidUpdate(){
     //
+    // componentDidUpdate(prevPage){
+    //     let {page} = qs.parse(location.search, {ignoreQueryPrefix: true});
+    //     if (this.page !== prevPage) {
+    //         this.setState({...page});
+    //     }
+    //     console.log(page);
     // }
 
     render(){

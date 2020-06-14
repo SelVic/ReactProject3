@@ -19,7 +19,7 @@ class Pager extends Component {
         return (
             <div>
                 {
-                    pages.map((p, i) => <Fragment key={p}><Link to={`/?page=${p}`}>{p}</Link>{"  "}</Fragment>)
+                    pages.map((p, i) => <Fragment key={p}><Link to={`/?page=${p}`}>{p}</Link>{"  "} </Fragment>)
                 }
                 <div className="myFont">{this.props.current} {this.props.total}</div>
             </div>

@@ -155,7 +155,7 @@ var Pager = /*#__PURE__*/function (_Component) {
           key: p
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reach_router__WEBPACK_IMPORTED_MODULE_1__["Link"], {
           to: "/?page=".concat(p)
-        }, p), "  ");
+        }, p), "  ", " ");
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "myFont"
       }, this.props.current, " ", this.props.total));
@@ -292,10 +292,16 @@ var App = /*#__PURE__*/function (_Component) {
       }),
           page = _qs$parse.page;
 
-      this.page = page;
+      this.page = page; // this.setState({...page});
+
       console.log(page);
-    } // componentDidUpdate(){
-    //
+    } //
+    // componentDidUpdate(prevPage){
+    //     let {page} = qs.parse(location.search, {ignoreQueryPrefix: true});
+    //     if (this.page !== prevPage) {
+    //         this.setState({...page});
+    //     }
+    //     console.log(page);
     // }
 
   }, {
