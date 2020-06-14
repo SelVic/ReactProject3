@@ -29,6 +29,8 @@ class App extends Component{
     render(){
         let total = 15;
         let curr = this.page;
+        let visible = 5;
+        let sides = 2;
         return <Pager total={total} current={curr}/>
     }
 }

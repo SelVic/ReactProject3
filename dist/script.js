@@ -303,6 +303,8 @@ var App = /*#__PURE__*/function (_Component) {
     value: function render() {
       var total = 15;
       var curr = this.page;
+      var visible = 5;
+      var sides = 2;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Pager_jsx__WEBPACK_IMPORTED_MODULE_1__["Pager"], {
         total: total,
         current: curr
