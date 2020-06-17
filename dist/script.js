@@ -103,7 +103,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var qs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! qs */ "./node_modules/qs/lib/index.js");
 /* harmony import */ var qs__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(qs__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_4__);
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -125,29 +139,75 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
 
 
+
+
+var leftPageButton = "left";
+var rightPageButton = "right";
+
+var Paging = function Paging(start, finish) {
+  var i = start;
+  var visibleRange = [];
+
+  while (i <= finish) {
+    visibleRange.push(i);
+    i += 1;
+  }
+
+  return visibleRange; // console.log(visibleRange)
+};
 
 var Pager = /*#__PURE__*/function (_Component) {
   _inherits(Pager, _Component);
 
   var _super = _createSuper(Pager);
 
-  function Pager() {
+  function Pager(props) {
+    var _this;
+
     _classCallCheck(this, Pager);
 
-    return _super.apply(this, arguments);
+    _this = _super.call(this, props);
+
+    _defineProperty(_assertThisInitialized(_this), "getPageNumbers", function () {
+      var startPage = 1;
+      var total = _this.total;
+      var sides = _this.sides;
+      var totalVisible = _this.total * 2 + 1;
+      var totalButtons = totalVisible + 2;
+      var pages = Paging(1, 20);
+      var leftHidden = startPage > 2;
+      var rightHidden = total - endPage > 1;
+      var totalHidden = totalVisible - (pages.length + 1);
+
+      switch (true) {
+        case leftHidden && !rightHidden:
+          {
+            var extraPages = Paging(startPage - totalHidden, startPage - 1);
+            pages = [leftPageButton].concat(_toConsumableArray(extraPages), _toConsumableArray(pages));
+            break;
+          }
+      }
+    });
+
+    var _total = null; //максимальное значение смещения, а не ровно 2
+    //стрелка видна-не видна
+    //math.ceil math floor округление относительно нуля
+
+    var sides = 2;
+    var current = 1; // this.state = {
+    //     current: 1
+    // }
+
+    return _this;
   }
 
   _createClass(Pager, [{
     key: "render",
-    // updateCurr = (page) => {
-    //     this.setState({current : page})
-    // };
-    //yandex.ru/maps/city/5?id=4&category=gifts#hook
-    //path?query#hook
     value: function render() {
       var pages = this.props.pages;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, pages.map(function (p, i) {
@@ -168,10 +228,12 @@ var Pager = /*#__PURE__*/function (_Component) {
 Pager.defaultProps = {
   pages: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
   firstPage: 1,
-  visible: 5,
-  total: 10,
-  current: 1
-}; // const Pager = props => {
+  total: 20,
+  current: 1,
+  pageSize: 4,
+  pagerSize: 5
+};
+Pager.propTypes = {}; // const Pager = props => {
 //     let pages = [1,2,3,4,5,6,7,8,9,10];
 //     let total = 10;
 //     let current = 1;
@@ -225,6 +287,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var qs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! qs */ "./node_modules/qs/lib/index.js");
 /* harmony import */ var qs__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(qs__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _reach_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @reach/router */ "./node_modules/@reach/router/es/index.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -248,6 +311,7 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -280,48 +344,63 @@ var App = /*#__PURE__*/function (_Component) {
 
   _createClass(App, [{
     key: "componentDidMount",
-    //
-    //setState в дидмаунте
-    //что срабатывает когда хожу по ссылкам
-    //доки REACT
-    // 
-    //
+    // page = 15;
+    // почему нельзя использовать this.state.page в if дидмаунта
+    // перечитать реакт
     value: function componentDidMount() {
       var _qs$parse = qs__WEBPACK_IMPORTED_MODULE_3___default.a.parse(location.search, {
         ignoreQueryPrefix: true
       }),
           page = _qs$parse.page;
 
-      this.page = page; // this.setState({...page});
-
+      this.setState({
+        page: page
+      });
       console.log(page);
     } //
-    // componentDidUpdate(prevPage){
-    //     let {page} = qs.parse(location.search, {ignoreQueryPrefix: true});
-    //     if (this.page !== prevPage) {
-    //         this.setState({...page});
-    //     }
-    //     console.log(page);
-    // }
 
+  }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate(prevProps, prevState) {
+      var _qs$parse2 = qs__WEBPACK_IMPORTED_MODULE_3___default.a.parse(location.search, {
+        ignoreQueryPrefix: true
+      }),
+          page = _qs$parse2.page;
+
+      if (prevState.page !== page) {
+        this.setState({
+          page: page
+        });
+      }
+
+      console.log(page);
+    }
   }, {
     key: "render",
     value: function render() {
       var total = 15;
-      var curr = this.page;
+      var curr = this.state.page;
       var visible = 5;
       var sides = 2;
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Pager_jsx__WEBPACK_IMPORTED_MODULE_1__["Pager"], {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, this.props.children, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Pager_jsx__WEBPACK_IMPORTED_MODULE_1__["Pager"], {
         total: total,
         current: curr
-      });
+      }));
     }
   }]);
 
   return App;
 }(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 
-Object(react_dom__WEBPACK_IMPORTED_MODULE_2__["render"])( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(App, null), document.querySelector("#root"));
+var TestComponent = function TestComponent() {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "123");
+};
+
+Object(react_dom__WEBPACK_IMPORTED_MODULE_2__["render"])( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reach_router__WEBPACK_IMPORTED_MODULE_4__["Router"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(App, {
+  path: "/"
+}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(TestComponent, {
+  "default": true
+}))), document.querySelector("#root"));
 
 /***/ }),
 

@@ -2,20 +2,62 @@ import React, {Component, Fragment} from "react";
 import {Link} from "@reach/router";
 import {render} from 'react-dom';
 import qs from "qs";
+import PropTypes from 'prop-types';
+
+const leftPageButton = "left";
+const rightPageButton = "right";
+
+const Paging = (start, finish) =>{
+    let i = start;
+    const visibleRange = [];
+    while (i <= finish)
+    {
+        visibleRange.push(i);
+        i += 1;
+    }
+    return visibleRange;
+    // console.log(visibleRange)
+}
 
 
 class Pager extends Component {
+    constructor(props) {
+        super(props);
+        let total = null;
+        //максимальное значение смещения, а не ровно 2
+        //стрелка видна-не видна
+        //math.ceil math floor округление относительно нуля
+        let sides = 2;
+        let current = 1;
+        // this.state = {
+        //     current: 1
+        // }
+    }
 
+    getPageNumbers = () => {
+        let startPage = 1;
+        let total = this.total;
+        let sides = this.sides;
+        let totalVisible = (this.total*2) + 1;
+        let totalButtons = totalVisible + 2;
+        let pages = Paging(1,20)  ;
+        let leftHidden = startPage > 2;
+        let rightHidden = (total - endPage) > 1;
+        let totalHidden = totalVisible - (pages.length + 1)
 
+        switch (true) {
+            case (leftHidden && !rightHidden): {
+                let extraPages = Paging(startPage - totalHidden, startPage - 1);
+                pages = [leftPageButton, ...extraPages, ...pages];
+                break;
+            }
+            }
 
-    // updateCurr = (page) => {
-    //     this.setState({current : page})
-    // };
-    //yandex.ru/maps/city/5?id=4&category=gifts#hook
-    //path?query#hook
+    }
 
     render() {
         let pages = this.props.pages;
+
         return (
             <div>
                 {
@@ -30,9 +72,13 @@ class Pager extends Component {
 Pager.defaultProps = {
     pages :[1,2,3,4,5,6,7,8,9,10],
     firstPage : 1,
-    visible : 5,
-    total : 10,
-    current : 1
+    total : 20,
+    current : 1,
+    pageSize: 4,
+    pagerSize: 5
+}
+
+Pager.propTypes = {
 }
 
 // const Pager = props => {
