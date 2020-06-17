@@ -13,6 +13,7 @@ class App extends Component{
     // page = 15;
     // почему нельзя использовать this.state.page в if дидмаунта
     // перечитать реакт
+    // 
 
     componentDidMount(){
         let {page} = qs.parse(location.search, {ignoreQueryPrefix: true});
