@@ -16,7 +16,6 @@ const Paging = (start, finish) =>{
         i += 1;
     }
     return visibleRange;
-    // console.log(visibleRange)
 }
 
 
@@ -29,26 +28,34 @@ class Pager extends Component {
         //math.ceil math floor округление относительно нуля
         let sides = 2;
         let current = 1;
-        // this.state = {
-        //     current: 1
-        // }
     }
 
     getPageNumbers = () => {
-        let startPage = 1;
+        let start = 1;
         let total = this.total;
         let sides = this.sides;
+        let pageSize = this.pageSize;
         let totalVisible = (this.total*2) + 1;
-        let totalButtons = totalVisible + 2;
+        let totalPages = Math.ceil(total / pageSize);
         let pages = Paging(1,20)  ;
-        let leftHidden = startPage > 2;
+        let leftHidden = start > 2;
         let rightHidden = (total - endPage) > 1;
         let totalHidden = totalVisible - (pages.length + 1)
 
         switch (true) {
             case (leftHidden && !rightHidden): {
-                let extraPages = Paging(startPage - totalHidden, startPage - 1);
+                let extraPages = Paging(start - totalHidden, start - 1);
                 pages = [leftPageButton, ...extraPages, ...pages];
+                break;
+            }
+            case (!leftHidden && rightHidden): {
+                const extraPages = Paging(endPage + 1, endPage + spillOffset);
+                pages = [...pages, ...extraPages, rightPageButton];
+                break;
+            }
+            case (leftHidden && rightHidden):
+            default: {
+                pages = [leftPageButton, ...pages, rightPageButton];
                 break;
             }
             }
@@ -57,7 +64,6 @@ class Pager extends Component {
 
     render() {
         let pages = this.props.pages;
-
         return (
             <div>
                 {
