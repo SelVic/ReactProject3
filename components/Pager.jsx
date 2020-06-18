@@ -49,7 +49,7 @@ class Pager extends Component {
                 break;
             }
             case (!leftHidden && rightHidden): {
-                const extraPages = Paging(endPage + 1, endPage + spillOffset);
+                const extraPages = Paging(endPage + 1, endPage + totalHidden);
                 pages = [...pages, ...extraPages, rightPageButton];
                 break;
             }
@@ -66,6 +66,7 @@ class Pager extends Component {
         let pages = this.props.pages;
         return (
             <div>
+                if
                 {
                     pages.map((p, i) => <Fragment key={p}><Link to={`/?page=${p}`}>{p}</Link>{"  "} </Fragment>)
                 }
