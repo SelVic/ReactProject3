@@ -59,16 +59,21 @@ class Pager extends Component {
                 break;
             }
             }
-
+        return [1,...pages,totalPages]
     }
 
     render() {
         let pages = this.props.pages;
         return (
             <div>
-                if
+                {
+                    leftPageButton && pages.map((p, i) => <Fragment key={p}><Link to={`/?page=${p}`}>{p}</Link>{"  "} </Fragment>)
+                }
                 {
                     pages.map((p, i) => <Fragment key={p}><Link to={`/?page=${p}`}>{p}</Link>{"  "} </Fragment>)
+                }
+                {
+                    rightPageButton && pages.map((p, i) => <Fragment key={p}><Link to={`/?page=${p}`}>{p}</Link>{"  "} </Fragment>)
                 }
                 <div className="myFont">{this.props.current} {this.props.total}</div>
             </div>
