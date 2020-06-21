@@ -1,131 +1,156 @@
-import React, {Component, Fragment} from "react";
-import {Link} from "@reach/router";
-import {render} from 'react-dom';
-import qs from "qs";
+import React from 'react';
 import PropTypes from 'prop-types';
-
-const leftPageButton = "left";
-const rightPageButton = "right";
-
-const Paging = (start, finish) =>{
-    let i = start;
-    const visibleRange = [];
-    while (i <= finish)
-    {
-        visibleRange.push(i);
-        i += 1;
-    }
-    return visibleRange;
-}
+import qs from 'qs';
+import {Link} from "@reach/router";
+import first from "lodash/first";
+import last from "lodash/last";
+import {moviesApi} from "../moviesApi";
 
 
-class Pager extends Component {
-    constructor(props) {
-        super(props);
-        let total = null;
-        //максимальное значение смещения, а не ровно 2
-        //стрелка видна-не видна
-        //math.ceil math floor округление относительно нуля
-        let sides = 2;
-        let current = 1;
+const Pager = props => {
+    let visiblePagesCount = props.visiblePagesCount;
+    let offset = Math.floor(visiblePagesCount / 2);
+    let maxPagesCount = Math.ceil(props.total / props.pageSize) || 1;
+    let pages = [];
+    let start = 1;
+    let query = qs.parse(location.search, {ignoreQueryPrefix: true});
+    let currentPage = props.currentPage;
+
+    if (props.currentPage > offset) {
+        start = props.currentPage - offset;
+        if (start > maxPagesCount - visiblePagesCount + 1 && maxPagesCount >= visiblePagesCount) {
+            start = maxPagesCount - visiblePagesCount + 1;
+        }
     }
 
-    getPageNumbers = () => {
-        let start = 1;
-        let total = this.total;
-        let sides = this.sides;
-        let pageSize = this.pageSize;
-        let totalVisible = (this.total*2) + 1;
-        let totalPages = Math.ceil(total / pageSize);
-        let pages = Paging(1,20)  ;
-        let leftHidden = start > 2;
-        let rightHidden = (total - endPage) > 1;
-        let totalHidden = totalVisible - (pages.length + 1)
-
-        switch (true) {
-            case (leftHidden && !rightHidden): {
-                let extraPages = Paging(start - totalHidden, start - 1);
-                pages = [leftPageButton, ...extraPages, ...pages];
-                break;
-            }
-            case (!leftHidden && rightHidden): {
-                const extraPages = Paging(endPage + 1, endPage + totalHidden);
-                pages = [...pages, ...extraPages, rightPageButton];
-                break;
-            }
-            case (leftHidden && rightHidden):
-            default: {
-                pages = [leftPageButton, ...pages, rightPageButton];
-                break;
-            }
-            }
-        return [1,...pages,totalPages]
+    if (start + visiblePagesCount > maxPagesCount) {
+        visiblePagesCount = Math.abs(maxPagesCount - start) + 1;
     }
 
-    render() {
-        let pages = this.props.pages;
-        return (
-            <div>
-                {
-                    leftPageButton && pages.map((p, i) => <Fragment key={p}><Link to={`/?page=${p}`}>{p}</Link>{"  "} </Fragment>)
-                }
-                {
-                    pages.map((p, i) => <Fragment key={p}><Link to={`/?page=${p}`}>{p}</Link>{"  "} </Fragment>)
-                }
-                {
-                    rightPageButton && pages.map((p, i) => <Fragment key={p}><Link to={`/?page=${p}`}>{p}</Link>{"  "} </Fragment>)
-                }
-                <div className="myFont">{this.props.current} {this.props.total}</div>
-            </div>
-        )
+    for (let i = 0; i < visiblePagesCount; ++i) {
+        pages.push(i + start);
     }
-}
 
-Pager.defaultProps = {
-    pages :[1,2,3,4,5,6,7,8,9,10],
-    firstPage : 1,
-    total : 20,
-    current : 1,
-    pageSize: 4,
-    pagerSize: 5
+    let isPrev = first(pages) > 1;
+    let isNext = last(pages) < maxPagesCount;
+
+    return (
+        <div className="pager mb-20">
+            {
+                isPrev && <Link to={`${location.pathname}?${qs.stringify({...query, page: currentPage - 1})}`} ><a>prev</a></Link>
+            }
+            {
+                pages.map(p => <Link to={`${location.pathname}?${qs.stringify({...query, page})}`} key={p}>{p}</Link>)
+            }
+            {
+                isNext && <Link to={`${location.pathname}?${qs.stringify({...query, page: currentPage + 1})}`}><a>next</a></Link>
+            }
+        </div>
+    );
 }
 
 Pager.propTypes = {
+    currentPage: PropTypes.number,
+    pageSize: PropTypes.number,
+    visiblePagesCount: PropTypes.number,
+    total: PropTypes.number
 }
 
-// const Pager = props => {
-//     let pages = [1,2,3,4,5,6,7,8,9,10];
-//     let total = 10;
-//     let current = 1;
-//     let firstPage = 1;
-//     let visible = 5;
-//     let sides = Math.floor(visible / 2)
+Pager.defaultProps = {
+    currentPage: 1,
+    pageSize: 20,
+    visiblePagesCount: 5,
+    total: 0
+}
+
+// const leftPageButton = "left";
+// const rightPageButton = "right";
 //
-//     let updateCurr = (newCurr) => {
-//         current=newCurr;
+// const Paging = (start, finish) =>{
+//     let i = start;
+//     const visibleRange = [];
+//     while (i <= finish)
+//     {
+//         visibleRange.push(i);
+//         i += 1;
+//     }
+//     return visibleRange;
+// }
+//
+//
+// class Pager extends Component {
+//     constructor(props) {
+//         super(props);
+//         let total = null;
+//         //максимальное значение смещения, а не ровно 2
+//         //стрелка видна-не видна
+//         //math.ceil math floor округление относительно нуля
+//         let sides = 2;
+//         let current = 1;
 //     }
 //
-//     // if (firstPage ) {
-//     //     visible = Math.abs(sides - firstPage) + 1;
-//     // }
+//     getPageNumbers = () => {
+//         let start = 1;
+//         let total = this.total;
+//         let sides = this.sides;
+//         let pageSize = this.pageSize;
+//         let totalVisible = (this.total*2) + 1;
+//         let totalPages = Math.ceil(total / pageSize);
+//         let pages = Paging(1,20)  ;
+//         let leftHidden = start > 2;
+//         let rightHidden = (total - endPage) > 1;
+//         let totalHidden = totalVisible - (pages.length + 1)
 //
-//     // if (current > sides)
-//     //     firstPage = current - sides;
-//
-//     // for (let i=0; i < visible; i++ ){
-//     //     pages.push()
-//     // }
-//     return (
-//         <div>
-//             {
-//                 pages.map((p, i) => <span key={p} onClick={e => updateCurr(p)}><Link to='/'>{p}{"   "}</Link></span>)
+//         switch (true) {
+//             case (leftHidden && !rightHidden): {
+//                 let extraPages = Paging(start - totalHidden, start - 1);
+//                 pages = [leftPageButton, ...extraPages, ...pages];
+//                 break;
 //             }
-//             <div>{current}</div>
-//         </div>
+//             case (!leftHidden && rightHidden): {
+//                 const extraPages = Paging(endPage + 1, endPage + totalHidden);
+//                 pages = [...pages, ...extraPages, rightPageButton];
+//                 break;
+//             }
+//             case (leftHidden && rightHidden):
+//             default: {
+//                 pages = [leftPageButton, ...pages, rightPageButton];
+//                 break;
+//             }
+//             }
+//         return [1,...pages,totalPages]
+//     }
 //
+//     render() {
+//         let pages = this.props.pages;
+//         return (
+//             <div>
+//                 {
+//                     leftPageButton && pages.map((p, i) => <Fragment key={p}><Link to={`/?page=${p}`}>{p}</Link>{"  "} </Fragment>)
+//                 }
+//                 {
+//                     pages.map((p, i) => <Fragment key={p}><Link to={`/?page=${p}`}>{p}</Link>{"  "} </Fragment>)
+//                 }
+//                 {
+//                     rightPageButton && pages.map((p, i) => <Fragment key={p}><Link to={`/?page=${p}`}>{p}</Link>{"  "} </Fragment>)
+//                 }
+//                 <div className="myFont">{this.props.current} {this.props.total}</div>
+//             </div>
+//         )
+//     }
+// }
 //
-//     )
+// Pager.defaultProps = {
+//     pages :[1,2,3,4,5,6,7,8,9,10],
+//     firstPage : 1,
+//     total : 20,
+//     current : 1,
+//     pageSize: 4,
+//     pagerSize: 5
+// }
+//
+// Pager.propTypes = {
 // }
 
+export {Pager};
 
-export {Pager}
