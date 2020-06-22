@@ -49,6 +49,7 @@ const Pager = props => {
     );
 }
 
+
 Pager.propTypes = {
     currentPage: PropTypes.number,
     pageSize: PropTypes.number,
