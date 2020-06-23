@@ -35,7 +35,8 @@ const Pager = props => {
     let isNext = last(pages) < maxPagesCount;
 
     return (
-        <div className="pager mb-20">
+        <div>
+            Test
             {
                 isPrev && <Link to={`${location.pathname}?${qs.stringify({...query, page: currentPage - 1})}`} ><a>prev</a></Link>
             }

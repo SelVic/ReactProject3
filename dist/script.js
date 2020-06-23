@@ -151,9 +151,7 @@ var Pager = function Pager(props) {
 
   var isPrev = lodash_first__WEBPACK_IMPORTED_MODULE_4___default()(pages) > 1;
   var isNext = lodash_last__WEBPACK_IMPORTED_MODULE_5___default()(pages) < maxPagesCount;
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "pager mb-20"
-  }, isPrev && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reach_router__WEBPACK_IMPORTED_MODULE_3__["Link"], {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Test", isPrev && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reach_router__WEBPACK_IMPORTED_MODULE_3__["Link"], {
     to: "".concat(location.pathname, "?").concat(qs__WEBPACK_IMPORTED_MODULE_2___default.a.stringify(_objectSpread(_objectSpread({}, query), {}, {
       page: currentPage - 1
     })))
