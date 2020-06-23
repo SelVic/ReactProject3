@@ -18,16 +18,19 @@ const Pager = props => {
 
     if (props.currentPage > offset) {
         start = props.currentPage - offset;
-        if (start > maxPagesCount - visiblePagesCount + 1 && maxPagesCount >= visiblePagesCount) {
+        if (start > maxPagesCount - visiblePagesCount + 1 && maxPagesCount >= visiblePagesCount)
+        {
             start = maxPagesCount - visiblePagesCount + 1;
         }
     }
 
-    if (start + visiblePagesCount > maxPagesCount) {
+    if (start + visiblePagesCount > maxPagesCount)
+    {
         visiblePagesCount = Math.abs(maxPagesCount - start) + 1;
     }
 
-    for (let i = 0; i < visiblePagesCount; ++i) {
+    for (let i = 0; i < visiblePagesCount; ++i)
+    {
         pages.push(i + start);
     }
 

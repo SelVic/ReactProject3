@@ -108,11 +108,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var lodash_last__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! lodash/last */ "./node_modules/lodash/last.js");
 /* harmony import */ var lodash_last__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(lodash_last__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _moviesApi__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../moviesApi */ "./moviesApi.js");
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
 
@@ -121,17 +116,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-
-var Pager = function Pager(props) {
-  var visiblePagesCount = props.visiblePagesCount;
-  var offset = Math.floor(visiblePagesCount / 2);
-  var maxPagesCount = Math.ceil(props.total / props.pageSize) || 1;
-  var pages = [];
-  var start = 1;
-  var query = qs__WEBPACK_IMPORTED_MODULE_2___default.a.parse(location.search, {
+const Pager = props => {
+  let visiblePagesCount = props.visiblePagesCount;
+  let offset = Math.floor(visiblePagesCount / 2);
+  let maxPagesCount = Math.ceil(props.total / props.pageSize) || 1;
+  let pages = [];
+  let start = 1;
+  let query = qs__WEBPACK_IMPORTED_MODULE_2___default.a.parse(location.search, {
     ignoreQueryPrefix: true
   });
-  var currentPage = props.currentPage;
+  let currentPage = props.currentPage;
 
   if (props.currentPage > offset) {
     start = props.currentPage - offset;
@@ -145,27 +139,25 @@ var Pager = function Pager(props) {
     visiblePagesCount = Math.abs(maxPagesCount - start) + 1;
   }
 
-  for (var i = 0; i < visiblePagesCount; ++i) {
+  for (let i = 0; i < visiblePagesCount; ++i) {
     pages.push(i + start);
   }
 
-  var isPrev = lodash_first__WEBPACK_IMPORTED_MODULE_4___default()(pages) > 1;
-  var isNext = lodash_last__WEBPACK_IMPORTED_MODULE_5___default()(pages) < maxPagesCount;
+  let isPrev = lodash_first__WEBPACK_IMPORTED_MODULE_4___default()(pages) > 1;
+  let isNext = lodash_last__WEBPACK_IMPORTED_MODULE_5___default()(pages) < maxPagesCount;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Test", isPrev && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reach_router__WEBPACK_IMPORTED_MODULE_3__["Link"], {
-    to: "".concat(location.pathname, "?").concat(qs__WEBPACK_IMPORTED_MODULE_2___default.a.stringify(_objectSpread(_objectSpread({}, query), {}, {
+    to: `${location.pathname}?${qs__WEBPACK_IMPORTED_MODULE_2___default.a.stringify({ ...query,
       page: currentPage - 1
-    })))
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", null, "prev")), pages.map(function (p) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reach_router__WEBPACK_IMPORTED_MODULE_3__["Link"], {
-      to: "".concat(location.pathname, "?").concat(qs__WEBPACK_IMPORTED_MODULE_2___default.a.stringify(_objectSpread(_objectSpread({}, query), {}, {
-        page: page
-      }))),
-      key: p
-    }, p);
-  }), isNext && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reach_router__WEBPACK_IMPORTED_MODULE_3__["Link"], {
-    to: "".concat(location.pathname, "?").concat(qs__WEBPACK_IMPORTED_MODULE_2___default.a.stringify(_objectSpread(_objectSpread({}, query), {}, {
+    })}`
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", null, "prev")), pages.map(p => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reach_router__WEBPACK_IMPORTED_MODULE_3__["Link"], {
+    to: `${location.pathname}?${qs__WEBPACK_IMPORTED_MODULE_2___default.a.stringify({ ...query,
+      page
+    })}`,
+    key: p
+  }, p)), isNext && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reach_router__WEBPACK_IMPORTED_MODULE_3__["Link"], {
+    to: `${location.pathname}?${qs__WEBPACK_IMPORTED_MODULE_2___default.a.stringify({ ...query,
       page: currentPage + 1
-    })))
+    })}`
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", null, "next")));
 };
 
@@ -290,119 +282,78 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var qs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! qs */ "./node_modules/qs/lib/index.js");
 /* harmony import */ var qs__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(qs__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _reach_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @reach/router */ "./node_modules/@reach/router/es/index.js");
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function () { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
 
 
 
+ //синтаксис для описания путей к файлам (см. гульпфайл)
+//плагины для релиза и трансформации кода
+//youtube gulp plugins
+//ошибка при замене тильды на node-modules
+//почитать про typescript
+//screencast в вотсе
 
+class App extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+  constructor(...args) {
+    super(...args);
 
-var App = /*#__PURE__*/function (_Component) {
-  _inherits(App, _Component);
-
-  var _super = _createSuper(App);
-
-  function App() {
-    var _this;
-
-    _classCallCheck(this, App);
-
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    _this = _super.call.apply(_super, [this].concat(args));
-
-    _defineProperty(_assertThisInitialized(_this), "state", {
+    _defineProperty(this, "state", {
       page: 1,
       sides: 2
     });
-
-    return _this;
   }
 
-  _createClass(App, [{
-    key: "componentDidMount",
-    // page = 15;
-    // почему нельзя использовать this.state.page в if дидмаунта
-    // перечитать реакт
-    // 
-    value: function componentDidMount() {
-      var _qs$parse = qs__WEBPACK_IMPORTED_MODULE_3___default.a.parse(location.search, {
-        ignoreQueryPrefix: true
-      }),
-          page = _qs$parse.page;
+  componentDidMount() {
+    let {
+      page
+    } = qs__WEBPACK_IMPORTED_MODULE_3___default.a.parse(location.search, {
+      ignoreQueryPrefix: true
+    });
+    this.setState({
+      page
+    });
+    console.log(page);
+  }
 
+  componentDidUpdate(prevProps, prevState) {
+    let {
+      page
+    } = qs__WEBPACK_IMPORTED_MODULE_3___default.a.parse(location.search, {
+      ignoreQueryPrefix: true
+    });
+
+    if (prevState.page !== page) {
       this.setState({
-        page: page
+        page
       });
-      console.log(page);
-    } //
-
-  }, {
-    key: "componentDidUpdate",
-    value: function componentDidUpdate(prevProps, prevState) {
-      var _qs$parse2 = qs__WEBPACK_IMPORTED_MODULE_3___default.a.parse(location.search, {
-        ignoreQueryPrefix: true
-      }),
-          page = _qs$parse2.page;
-
-      if (prevState.page !== page) {
-        this.setState({
-          page: page
-        });
-      }
-
-      console.log(page);
     }
-  }, {
-    key: "render",
-    value: function render() {
-      var total = 15;
-      var curr = this.state.page;
-      var visible = 5;
-      var sides = 2;
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, this.props.children, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Pager_jsx__WEBPACK_IMPORTED_MODULE_1__["Pager"], {
-        total: total,
-        current: curr
-      }));
-    }
-  }]);
 
-  return App;
-}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+    console.log(page);
+  }
 
-var TestComponent = function TestComponent() {
+  render() {
+    let total = 15;
+    let curr = this.state.page;
+    let visible = 5;
+    let sides = 2;
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, this.props.children, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Pager_jsx__WEBPACK_IMPORTED_MODULE_1__["Pager"], {
+      total: total,
+      current: curr
+    }));
+  }
+
+}
+
+let TestComponent = () => {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "123");
 };
 
 Object(react_dom__WEBPACK_IMPORTED_MODULE_2__["render"])( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reach_router__WEBPACK_IMPORTED_MODULE_4__["Router"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(App, {
   path: "/"
 }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(TestComponent, {
-  "default": true
+  default: true
 }))), document.querySelector("#root"));
 
 /***/ }),
@@ -419,107 +370,31 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "moviesApi", function() { return moviesApi; });
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
-
-
-var def = {
+const def = {
   api_key: '2934fb32a8f4aad4d39b02e619082aa3',
   language: 'ru-RU'
 };
-var moviesApi = {
-  getTopList: function () {
-    var _getTopList = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(params) {
-      var response;
-      return regeneratorRuntime.wrap(function _callee$(_context) {
-        while (1) {
-          switch (_context.prev = _context.next) {
-            case 0:
-              Object.assign(params, def);
-              _context.next = 3;
-              return axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('https://api.themoviedb.org/3/movie/top_rated', {
-                params: params
-              });
-
-            case 3:
-              response = _context.sent;
-              return _context.abrupt("return", response.data);
-
-            case 5:
-            case "end":
-              return _context.stop();
-          }
-        }
-      }, _callee);
-    }));
-
-    function getTopList(_x) {
-      return _getTopList.apply(this, arguments);
-    }
-
-    return getTopList;
-  }(),
-  getMovie: function () {
-    var _getMovie = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(id) {
-      var response;
-      return regeneratorRuntime.wrap(function _callee2$(_context2) {
-        while (1) {
-          switch (_context2.prev = _context2.next) {
-            case 0:
-              _context2.next = 2;
-              return axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("https://api.themoviedb.org/3/movie/".concat(id), {
-                params: def
-              });
-
-            case 2:
-              response = _context2.sent;
-              return _context2.abrupt("return", response.data);
-
-            case 4:
-            case "end":
-              return _context2.stop();
-          }
-        }
-      }, _callee2);
-    }));
-
-    function getMovie(_x2) {
-      return _getMovie.apply(this, arguments);
-    }
-
-    return getMovie;
-  }(),
-  getIdentical: function () {
-    var _getIdentical = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3(id) {
-      var response;
-      return regeneratorRuntime.wrap(function _callee3$(_context3) {
-        while (1) {
-          switch (_context3.prev = _context3.next) {
-            case 0:
-              _context3.next = 2;
-              return axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("https://api.themoviedb.org/3/movie/".concat(id, "/similar"), {
-                params: def
-              });
-
-            case 2:
-              response = _context3.sent;
-              return _context3.abrupt("return", response.data);
-
-            case 4:
-            case "end":
-              return _context3.stop();
-          }
-        }
-      }, _callee3);
-    }));
-
-    function getIdentical(_x3) {
-      return _getIdentical.apply(this, arguments);
-    }
-
-    return getIdentical;
-  }()
+const moviesApi = {
+  getTopList: async params => {
+    Object.assign(params, def);
+    let response = await axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('https://api.themoviedb.org/3/movie/top_rated', {
+      params
+    });
+    return response.data;
+  },
+  getMovie: async id => {
+    let response = await axios__WEBPACK_IMPORTED_MODULE_0___default.a.get(`https://api.themoviedb.org/3/movie/${id}`, {
+      params: def
+    });
+    return response.data;
+  },
+  getIdentical: async id => {
+    let response = await axios__WEBPACK_IMPORTED_MODULE_0___default.a.get(`https://api.themoviedb.org/3/movie/${id}/similar`, {
+      params: def
+    });
+    return response.data;
+  }
 };
 
 

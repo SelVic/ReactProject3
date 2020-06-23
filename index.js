@@ -5,22 +5,25 @@ import qs from "qs";
 import {Router} from "@reach/router";
 
 
+//синтаксис для описания путей к файлам (см. гульпфайл)
+//плагины для релиза и трансформации кода
+//youtube gulp plugins
+//ошибка при замене тильды на node-modules
+//почитать про typescript
+//screencast в вотсе
+
+
 class App extends Component{
     state = {
         page: 1,
         sides: 2
     };
-    // page = 15;
-    // почему нельзя использовать this.state.page в if дидмаунта
-    // перечитать реакт
-    // 
 
     componentDidMount(){
         let {page} = qs.parse(location.search, {ignoreQueryPrefix: true});
         this.setState({page});
         console.log(page);
     }
-    //
     componentDidUpdate(prevProps, prevState){
         let {page} = qs.parse(location.search, {ignoreQueryPrefix: true});
         if (prevState.page !== page) {
