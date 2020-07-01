@@ -29,9 +29,3 @@ gulp.task('watch', gulp.series('delete', 'styles', function () {
 
 gulp.task('build', gulp.series('delete', 'styles'));
 
-function tildaResolver(url, prev, done) {
-    if (url[0] === '~') {
-        url = path.resolve('node_modules', url.substr(1));
-    }
-    return {file: url};
-}
