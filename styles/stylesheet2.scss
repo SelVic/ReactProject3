@@ -1,0 +1,8 @@
+@each $size in 10,20,30,40,50 {
+  .pb-#{$size} {
+    padding-bottom: #{$size}px;
+  }
+  .pt-#{$size} {
+    padding-top: #{$size}px;
+  }
+}

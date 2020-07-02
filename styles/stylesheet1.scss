@@ -1,0 +1,8 @@
+@each $size in 10,20,30,40,50 {
+  .mb-#{$size} {
+    margin-bottom: #{$size}px;
+  }
+  .mt-#{$size} {
+    margin-top: #{$size}px;
+  }
+}

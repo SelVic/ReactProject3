@@ -1,13 +1,16 @@
 let gulp = require('gulp'),
     sourcemaps = require('gulp-sourcemaps'),
-    del = require('del');
+    del = require('del'),
+    sass = require('gulp-sass'),
+    minify = require('gulp-clean-css'),
+    hash = require('gulp-hash'),
+    concat = require('gulp-concat-css')
 
 let styles = ['styles/styles.css'],
     destination = 'build';
 
 let test = ['test.js'],
     destination1 = 'build/testDest';
-
 
 gulp.task('test', function () {
     return gulp.src(test)
@@ -27,6 +30,22 @@ gulp.task('styles', function () {
         .pipe(gulp.dest(destination));
 });
 
+gulp.task('sass-debugger', function () {
+    return gulp.src("styles/stylesheet1.scss")
+        .pipe(sourcemaps.init())
+        .pipe(sass())
+        .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest(destination));
+});
+
+gulp.task('sass-release', function () {
+    return gulp.src("styles/*.scss")
+        .pipe(sass())
+        .pipe(concat("styles.min.css"))
+        .pipe(minify())
+        .pipe(hash())
+        .pipe(gulp.dest(destination));
+});
 
 gulp.task('build', gulp.series('test', 'styles'));
 
