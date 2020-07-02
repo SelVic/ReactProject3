@@ -1,31 +1,32 @@
 let gulp = require('gulp'),
     sourcemaps = require('gulp-sourcemaps'),
-    sass = require('gulp-sass'),
-    del = require('del'),
-    path = require('path');
+    del = require('del');
 
-let styles = ['app/css/styles.scss'],
-    destination = 'app/build';
+let styles = ['styles/styles.css'],
+    destination = 'build';
 
-gulp.task('delete', function () {
-    return del(['app/build/*.css', 'app/build/*.css.map'])
-});
+let test = ['test.js'],
+    destination1 = 'build/testDest';
+
+
+gulp.task('test', function () {
+    return gulp.src(test)
+        .pipe(sourcemaps.init())
+        .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest(destination1));
+})
 
 gulp.task('clean', function () {
-    return del(['app/build/*'])
+    return del(['build/*'])
 });
 
 gulp.task('styles', function () {
     return gulp.src(styles)
         .pipe(sourcemaps.init())
-        .pipe(sass({importer: tildaResolver}).on('error', sass.logError))
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(destination));
 });
 
-gulp.task('watch', gulp.series('delete', 'styles', function () {
-    return gulp.watch(['app/css/**/*.scss'], gulp.series('styles'));
-}));
 
-gulp.task('build', gulp.series('delete', 'styles'));
+gulp.task('build', gulp.series('test', 'styles'));
 

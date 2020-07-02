@@ -5,13 +5,6 @@ import qs from "qs";
 import {Router} from "@reach/router";
 
 
-//синтаксис для описания путей к файлам (см. гульпфайл)
-//плагины для релиза и трансформации кода
-//youtube gulp plugins
-//ошибка при замене тильды на node-modules
-//почитать про typescript
-//screencast в вотсе
-
 
 class App extends Component{
     state = {
@@ -38,11 +31,13 @@ class App extends Component{
         let visible = 5;
         let sides = 2;
         return <Fragment>{this.props.children}<Pager total={total} current={curr}/></Fragment>
+        return <div></div>
     }
 }
 
 let TestComponent = () => {
-    return <div>123</div>
+    return <div className="myFont">TESTCOMPONENT</div>
 }
 
-render(<Router><App path = "/"><TestComponent default/></App></Router>, document.querySelector("#root"))
+// render(<Router><App path = "/"><TestComponent default/></App></Router>, document.querySelector("#root"))
+render(<TestComponent/>, document.querySelector("#root"))

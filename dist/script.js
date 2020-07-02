@@ -288,12 +288,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
- //синтаксис для описания путей к файлам (см. гульпфайл)
-//плагины для релиза и трансформации кода
-//youtube gulp plugins
-//ошибка при замене тильды на node-modules
-//почитать про typescript
-//screencast в вотсе
+
 
 class App extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
   constructor(...args) {
@@ -342,19 +337,19 @@ class App extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       total: total,
       current: curr
     }));
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null);
   }
 
 }
 
 let TestComponent = () => {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "123");
-};
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "myFont"
+  }, "TESTCOMPONENT");
+}; // render(<Router><App path = "/"><TestComponent default/></App></Router>, document.querySelector("#root"))
 
-Object(react_dom__WEBPACK_IMPORTED_MODULE_2__["render"])( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reach_router__WEBPACK_IMPORTED_MODULE_4__["Router"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(App, {
-  path: "/"
-}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(TestComponent, {
-  default: true
-}))), document.querySelector("#root"));
+
+Object(react_dom__WEBPACK_IMPORTED_MODULE_2__["render"])( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(TestComponent, null), document.querySelector("#root"));
 
 /***/ }),
 
