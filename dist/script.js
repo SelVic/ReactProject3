@@ -172,7 +172,8 @@ Pager.defaultProps = {
   pageSize: 20,
   visiblePagesCount: 5,
   total: 0
-}; // const leftPageButton = "left";
+}; //
+// const leftPageButton = "left";
 // const rightPageButton = "right";
 //
 // const Paging = (start, finish) =>{
