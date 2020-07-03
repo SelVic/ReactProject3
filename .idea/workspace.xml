@@ -103,7 +103,7 @@
       <recent name="C:\Users\User\WebstormProjects\movieproj" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Gulp.js.clean">
     <configuration name="SASS" type="js.build_tools.gulp" temporary="true">
       <node-interpreter>project</node-interpreter>
       <node-options />
