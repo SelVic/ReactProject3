@@ -1,59 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2a19540e-fbdb-4d10-99fa-0c508c818ad2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/styles.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/styles.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/testDest/test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/testDest/test.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/script.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/script.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gulpfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/gulpfile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/@types/events/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/@types/events/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/@types/events/index.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/@types/events/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/@types/glob/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@types/glob/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/@types/glob/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@types/glob/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/@types/glob/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@types/glob/index.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/@types/glob/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@types/glob/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/@types/node/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@types/node/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/@types/node/base.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@types/node/base.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/@types/node/child_process.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@types/node/child_process.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/@types/node/globals.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@types/node/globals.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/@types/node/http.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@types/node/http.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/@types/node/http2.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@types/node/http2.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/@types/node/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@types/node/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/@types/node/stream.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@types/node/stream.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/del/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/del/index.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/del/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/del/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/del/node_modules/globby/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/del/node_modules/globby/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/del/node_modules/globby/license" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/del/node_modules/globby/license" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/del/node_modules/globby/node_modules/pify/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/del/node_modules/globby/node_modules/pify/license" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/del/node_modules/globby/node_modules/pify/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/del/node_modules/globby/node_modules/pify/readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/del/node_modules/globby/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/del/node_modules/globby/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/del/node_modules/globby/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/del/node_modules/globby/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/del/node_modules/p-map/index.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/del/node_modules/p-map/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/del/node_modules/p-map/license" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/del/node_modules/p-map/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/del/node_modules/p-map/readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/del/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/del/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/del/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/del/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gulp-sass/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/gulp-sass/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/is-path-inside/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/is-path-inside/index.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/is-path-inside/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/is-path-inside/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/is-path-inside/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/is-path-inside/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/is-path-inside/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/is-path-inside/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/stylesheet1.scss" beforeDir="false" afterPath="$PROJECT_DIR$/styles/stylesheet1.scss" afterDir="false" />
-    </list>
+    <list default="true" id="2a19540e-fbdb-4d10-99fa-0c508c818ad2" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -88,7 +36,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.buildTools.gulp.gulp_package_dir" value="$PROJECT_DIR$/node_modules/gulp" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/styles" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../tasks" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2019.3.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
@@ -237,6 +185,7 @@
       <workItem from="1593549946766" duration="259000" />
       <workItem from="1593634847549" duration="621000" />
       <workItem from="1593706695128" duration="10048000" />
+      <workItem from="1593803627117" duration="67000" />
     </task>
     <servers />
   </component>
@@ -248,26 +197,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="414" y="176" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1590428876804" />
-    <state x="740" y="276" key="FileChooserDialogImpl" timestamp="1593707296449">
+    <state x="740" y="276" key="FileChooserDialogImpl" timestamp="1593895387013">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="276" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1593707296449" />
-    <state width="1898" height="237" key="GridCell.Tab.0.bottom" timestamp="1593719289345">
+    <state x="740" y="276" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1593895387013" />
+    <state width="1898" height="237" key="GridCell.Tab.0.bottom" timestamp="1593803693640">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1898" height="237" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1593719289345" />
-    <state width="1898" height="237" key="GridCell.Tab.0.center" timestamp="1593719289345">
+    <state width="1898" height="237" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1593803693640" />
+    <state width="1898" height="237" key="GridCell.Tab.0.center" timestamp="1593803693640">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1898" height="237" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1593719289345" />
-    <state width="1898" height="237" key="GridCell.Tab.0.left" timestamp="1593719289345">
+    <state width="1898" height="237" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1593803693640" />
+    <state width="1898" height="237" key="GridCell.Tab.0.left" timestamp="1593803693640">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1898" height="237" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1593719289345" />
-    <state width="1898" height="237" key="GridCell.Tab.0.right" timestamp="1593719289345">
+    <state width="1898" height="237" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1593803693640" />
+    <state width="1898" height="237" key="GridCell.Tab.0.right" timestamp="1593803693640">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1898" height="237" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593719289345" />
+    <state width="1898" height="237" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593803693640" />
     <state width="1898" height="342" key="GridCell.Tab.1.bottom" timestamp="1591123383850">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
