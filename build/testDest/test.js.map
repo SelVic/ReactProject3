@@ -1,0 +1,1 @@
+{"version":3,"names":[],"mappings":"","sources":["test.js"],"sourcesContent":["import React from \"react\";\r\n\r\nconst TestPage = () =>(\r\n    <div>Test1</div>\r\n)\r\n\r\nexport default TestPage"],"file":"test.js"}
