@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2a19540e-fbdb-4d10-99fa-0c508c818ad2" name="Default Changelist" comment="" />
+    <list default="true" id="2a19540e-fbdb-4d10-99fa-0c508c818ad2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/styles.min-f0df0015.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/stylesheet1.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/stylesheet1.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/testDest/test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/testDest/test.js.map" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -105,6 +112,17 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="watch" type="js.build_tools.gulp" temporary="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile>$PROJECT_DIR$/gulpfile.js</gulpfile>
+      <tasks>
+        <task>watch</task>
+      </tasks>
+      <arguments />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="js.build_tools.npm">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -125,23 +143,13 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="start" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gulp.js.sass-release" />
         <item itemvalue="Gulp.js.clean" />
+        <item itemvalue="Gulp.js.watch" />
+        <item itemvalue="Gulp.js.sass-release" />
         <item itemvalue="Gulp.js.sass-debugger" />
         <item itemvalue="Gulp.js.SASS" />
-        <item itemvalue="npm.start" />
       </list>
     </recent_temporary>
   </component>
@@ -186,6 +194,7 @@
       <workItem from="1593634847549" duration="621000" />
       <workItem from="1593706695128" duration="10048000" />
       <workItem from="1593803627117" duration="67000" />
+      <workItem from="1593895359304" duration="212000" />
     </task>
     <servers />
   </component>
@@ -201,22 +210,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="276" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1593895387013" />
-    <state width="1898" height="237" key="GridCell.Tab.0.bottom" timestamp="1593803693640">
+    <state width="1898" height="237" key="GridCell.Tab.0.bottom" timestamp="1593895571295">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1898" height="237" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1593803693640" />
-    <state width="1898" height="237" key="GridCell.Tab.0.center" timestamp="1593803693640">
+    <state width="1898" height="237" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1593895571295" />
+    <state width="1898" height="237" key="GridCell.Tab.0.center" timestamp="1593895571295">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1898" height="237" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1593803693640" />
-    <state width="1898" height="237" key="GridCell.Tab.0.left" timestamp="1593803693640">
+    <state width="1898" height="237" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1593895571295" />
+    <state width="1898" height="237" key="GridCell.Tab.0.left" timestamp="1593895571295">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1898" height="237" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1593803693640" />
-    <state width="1898" height="237" key="GridCell.Tab.0.right" timestamp="1593803693640">
+    <state width="1898" height="237" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1593895571295" />
+    <state width="1898" height="237" key="GridCell.Tab.0.right" timestamp="1593895571295">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1898" height="237" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593803693640" />
+    <state width="1898" height="237" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593895571295" />
     <state width="1898" height="342" key="GridCell.Tab.1.bottom" timestamp="1591123383850">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
