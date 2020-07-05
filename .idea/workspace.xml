@@ -59,22 +59,22 @@
     </key>
   </component>
   <component name="RunManager" selected="Gulp.js.clean">
-    <configuration name="SASS" type="js.build_tools.gulp" temporary="true">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <gulpfile>$PROJECT_DIR$/gulpfile.js</gulpfile>
-      <tasks>
-        <task>SASS</task>
-      </tasks>
-      <arguments />
-      <envs />
-      <method v="2" />
-    </configuration>
     <configuration default="true" type="js.build_tools.gulp">
       <node-interpreter>project</node-interpreter>
       <node-options />
       <gulpfile />
       <tasks />
+      <arguments />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="build" type="js.build_tools.gulp" temporary="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile>$PROJECT_DIR$/gulpfile.js</gulpfile>
+      <tasks>
+        <task>build</task>
+      </tasks>
       <arguments />
       <envs />
       <method v="2" />
@@ -145,11 +145,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gulp.js.build" />
         <item itemvalue="Gulp.js.clean" />
         <item itemvalue="Gulp.js.watch" />
         <item itemvalue="Gulp.js.sass-release" />
         <item itemvalue="Gulp.js.sass-debugger" />
-        <item itemvalue="Gulp.js.SASS" />
       </list>
     </recent_temporary>
   </component>
