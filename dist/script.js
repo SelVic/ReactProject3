@@ -348,10 +348,13 @@ let TestComponent = () => {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "myFont"
   }, "TESTCOMPONENT");
-}; // render(<Router><App path = "/"><TestComponent default/></App></Router>, document.querySelector("#root"))
+};
 
-
-Object(react_dom__WEBPACK_IMPORTED_MODULE_2__["render"])( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(TestComponent, null), document.querySelector("#root"));
+Object(react_dom__WEBPACK_IMPORTED_MODULE_2__["render"])( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reach_router__WEBPACK_IMPORTED_MODULE_4__["Router"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(App, {
+  path: "/"
+}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(TestComponent, {
+  default: true
+}))), document.querySelector("#root")); // render(<TestComponent/>, document.querySelector("#root"))
 
 /***/ }),
 
