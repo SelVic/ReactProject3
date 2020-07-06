@@ -41,5 +41,5 @@ let TestComponent = () => {
     return <div className="myFont">TESTCOMPONENT</div>
 }
 
-// render(<Router><App path = "/"><TestComponent default/></App></Router>, document.querySelector("#root"))
-render(<TestComponent/>, document.querySelector("#root"))
+render(<Router><App path = "/"><TestComponent default/></App></Router>, document.querySelector("#root"))
+// render(<TestComponent/>, document.querySelector("#root"))
