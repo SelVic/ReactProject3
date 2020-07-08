@@ -117,7 +117,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const Pager = props => {
-  let visiblePagesCount = props.visiblePagesCount;
+  let visiblePagesCount = 5;
   let offset = Math.floor(visiblePagesCount / 2);
   let maxPagesCount = Math.ceil(props.total / props.pageSize) || 1;
   let pages = [];
@@ -125,7 +125,7 @@ const Pager = props => {
   let query = qs__WEBPACK_IMPORTED_MODULE_2___default.a.parse(location.search, {
     ignoreQueryPrefix: true
   });
-  let currentPage = props.currentPage;
+  let current = props.currentPage;
 
   if (props.currentPage > offset) {
     start = props.currentPage - offset;
@@ -145,20 +145,20 @@ const Pager = props => {
 
   let isPrev = lodash_first__WEBPACK_IMPORTED_MODULE_4___default()(pages) > 1;
   let isNext = lodash_last__WEBPACK_IMPORTED_MODULE_5___default()(pages) < maxPagesCount;
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Test", isPrev && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reach_router__WEBPACK_IMPORTED_MODULE_3__["Link"], {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, isPrev && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reach_router__WEBPACK_IMPORTED_MODULE_3__["Link"], {
     to: `${location.pathname}?${qs__WEBPACK_IMPORTED_MODULE_2___default.a.stringify({ ...query,
-      page: currentPage - 1
+      page: current - 1
     })}`
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", null, "prev")), pages.map(p => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reach_router__WEBPACK_IMPORTED_MODULE_3__["Link"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "prev")), pages.map(p => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reach_router__WEBPACK_IMPORTED_MODULE_3__["Link"], {
     to: `${location.pathname}?${qs__WEBPACK_IMPORTED_MODULE_2___default.a.stringify({ ...query,
       p
     })}`,
     key: p
   }, p)), isNext && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reach_router__WEBPACK_IMPORTED_MODULE_3__["Link"], {
     to: `${location.pathname}?${qs__WEBPACK_IMPORTED_MODULE_2___default.a.stringify({ ...query,
-      page: currentPage + 1
+      page: current + 1
     })}`
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", null, "next")));
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "next")));
 };
 
 Pager.propTypes = {
@@ -277,79 +277,22 @@ Pager.defaultProps = {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_Pager_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/Pager.jsx */ "./components/Pager.jsx");
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var qs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! qs */ "./node_modules/qs/lib/index.js");
-/* harmony import */ var qs__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(qs__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _reach_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @reach/router */ "./node_modules/@reach/router/es/index.js");
-/* harmony import */ var _moviesApi__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./moviesApi */ "./moviesApi.js");
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _reach_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @reach/router */ "./node_modules/@reach/router/es/index.js");
+/* harmony import */ var _pages_MainMoviePage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pages/MainMoviePage */ "./pages/MainMoviePage.jsx");
 
 
 
 
 
+const App = props => {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reach_router__WEBPACK_IMPORTED_MODULE_2__["Router"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_pages_MainMoviePage__WEBPACK_IMPORTED_MODULE_3__["MainMoviePage"], {
+    path: "/"
+  }));
+};
 
- //post-css
-//gulp concat
-
-class App extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
-  constructor(...args) {
-    super(...args);
-
-    _defineProperty(this, "state", {
-      page: 1,
-      sides: 2
-    });
-  }
-
-  componentDidMount() {
-    let {
-      page
-    } = qs__WEBPACK_IMPORTED_MODULE_3___default.a.parse(location.search, {
-      ignoreQueryPrefix: true
-    });
-    this.setState({
-      page
-    });
-    console.log(page);
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-    let {
-      page
-    } = qs__WEBPACK_IMPORTED_MODULE_3___default.a.parse(location.search, {
-      ignoreQueryPrefix: true
-    });
-
-    if (prevState.page !== page) {
-      this.setState({
-        page
-      });
-    }
-
-    console.log(page);
-  }
-
-  render() {
-    let total = 15;
-    let curr = this.state.page;
-    let visible = 5;
-    let sides = 2;
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, this.props.children, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Pager_jsx__WEBPACK_IMPORTED_MODULE_1__["Pager"], {
-      total: total,
-      current: curr
-    }));
-  }
-
-} // let TestComponent = () => {
-//     return <div className="myFont">TESTCOMPONENT</div>
-// }
-// render(<Router><App path = "/">123</App></Router>, document.querySelector("#root"))
-
-
-Object(react_dom__WEBPACK_IMPORTED_MODULE_2__["render"])( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(App, null), document.querySelector("#root")); // render(<TestComponent/>, document.querySelector("#root"))
+Object(react_dom__WEBPACK_IMPORTED_MODULE_1__["render"])( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(App, null), document.querySelector("#root"));
 
 /***/ }),
 
@@ -34539,6 +34482,108 @@ try {
 // easier to handle this case. if(!global) { ...}
 
 module.exports = g;
+
+
+/***/ }),
+
+/***/ "./pages/MainMoviePage.jsx":
+/*!*********************************!*\
+  !*** ./pages/MainMoviePage.jsx ***!
+  \*********************************/
+/*! exports provided: MainMoviePage */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MainMoviePage", function() { return MainMoviePage; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var qs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! qs */ "./node_modules/qs/lib/index.js");
+/* harmony import */ var qs__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(qs__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _reach_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @reach/router */ "./node_modules/@reach/router/es/index.js");
+/* harmony import */ var lodash_first__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! lodash/first */ "./node_modules/lodash/first.js");
+/* harmony import */ var lodash_first__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(lodash_first__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var lodash_last__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! lodash/last */ "./node_modules/lodash/last.js");
+/* harmony import */ var lodash_last__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(lodash_last__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _moviesApi__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../moviesApi */ "./moviesApi.js");
+/* harmony import */ var _components_Pager__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/Pager */ "./components/Pager.jsx");
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+
+
+
+
+
+class MainMoviePage extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+  constructor(...args) {
+    super(...args);
+
+    _defineProperty(this, "state", {
+      page: 1,
+      total: 0
+    });
+
+    _defineProperty(this, "fetch", async params => {
+      this.setState({
+        page: +params.page
+      });
+      let apiData = _moviesApi__WEBPACK_IMPORTED_MODULE_6__["moviesApi"].getTopList(params);
+      this.setState({
+        total: apiData.total_results
+      });
+    });
+  }
+
+  // componentDidMount(){
+  //     let {page} = qs.parse(location.search, {ignoreQueryPrefix: true});
+  //     this.setState({page});
+  //     console.log(page);
+  // }
+  // componentDidUpdate(prevProps, prevState){
+  //     let {page} = qs.parse(location.search, {ignoreQueryPrefix: true});
+  //     if (prevState.page !== page) {
+  //         this.setState({page});
+  //     }
+  //     console.log(page);
+  // }
+  componentDidMount() {
+    let newQuery = qs__WEBPACK_IMPORTED_MODULE_2___default.a.parse(this.props.location.search, {
+      ignoreQueryPrefix: true
+    });
+    this.fetch({
+      page: newQuery.page
+    });
+  }
+
+  componentDidUpdate(prevProps) {
+    let oldQuery = qs__WEBPACK_IMPORTED_MODULE_2___default.a.parse(prevProps.location.search, {
+      ignoreQueryPrefix: true
+    });
+    let newQuery = qs__WEBPACK_IMPORTED_MODULE_2___default.a.parse(this.props.location.search, {
+      ignoreQueryPrefix: true
+    });
+    if (!isEqual(oldQuery, newQuery)) this.fetch({
+      page: newQuery.page
+    });
+  }
+
+  render() {
+    let total = this.total;
+    let curr = this.state.page;
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, this.props.children, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Pager__WEBPACK_IMPORTED_MODULE_7__["Pager"], {
+      total: total,
+      current: curr
+    }));
+  }
+
+}
+
 
 
 /***/ })

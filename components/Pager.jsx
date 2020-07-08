@@ -8,13 +8,13 @@ import {moviesApi} from "../moviesApi";
 
 
 const Pager = props => {
-    let visiblePagesCount = props.visiblePagesCount;
+    let visiblePagesCount = 5;
     let offset = Math.floor(visiblePagesCount / 2);
     let maxPagesCount = Math.ceil(props.total / props.pageSize) || 1;
     let pages = [];
     let start = 1;
     let query = qs.parse(location.search, {ignoreQueryPrefix: true});
-    let currentPage = props.currentPage;
+    let current = props.currentPage;
 
     if (props.currentPage > offset) {
         start = props.currentPage - offset;
@@ -39,15 +39,14 @@ const Pager = props => {
 
     return (
         <div>
-            Test
             {
-                isPrev && <Link to={`${location.pathname}?${qs.stringify({...query, page: currentPage - 1})}`} ><a>prev</a></Link>
+                isPrev && <Link to={`${location.pathname}?${qs.stringify({...query, page: current - 1})}`} ><span>prev</span></Link>
             }
             {
                 pages.map(p => <Link to={`${location.pathname}?${qs.stringify({...query, p})}`} key={p}>{p}</Link>)
             }
             {
-                isNext && <Link to={`${location.pathname}?${qs.stringify({...query, page: currentPage + 1})}`}><a>next</a></Link>
+                isNext && <Link to={`${location.pathname}?${qs.stringify({...query, page: current + 1})}`}><span>next</span></Link>
             }
         </div>
     );
