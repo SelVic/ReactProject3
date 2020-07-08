@@ -3,6 +3,7 @@ import {Pager} from "./components/Pager.jsx";
 import { render } from "react-dom";
 import qs from "qs";
 import {Router} from "@reach/router";
+import {moviesApi} from "./moviesApi";
 
 //post-css
 //gulp concat
@@ -33,13 +34,13 @@ class App extends Component{
         let visible = 5;
         let sides = 2;
         return <Fragment>{this.props.children}<Pager total={total} current={curr}/></Fragment>
-        return <div></div>
     }
 }
 
-let TestComponent = () => {
-    return <div className="myFont">TESTCOMPONENT</div>
-}
+// let TestComponent = () => {
+//     return <div className="myFont">TESTCOMPONENT</div>
+// }
 
-render(<Router><App path = "/"><TestComponent default/></App></Router>, document.querySelector("#root"))
+// render(<Router><App path = "/">123</App></Router>, document.querySelector("#root"))
+render(<App/>, document.querySelector("#root"))
 // render(<TestComponent/>, document.querySelector("#root"))

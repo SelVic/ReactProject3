@@ -44,7 +44,7 @@ const Pager = props => {
                 isPrev && <Link to={`${location.pathname}?${qs.stringify({...query, page: currentPage - 1})}`} ><a>prev</a></Link>
             }
             {
-                pages.map(p => <Link to={`${location.pathname}?${qs.stringify({...query, page})}`} key={p}>{p}</Link>)
+                pages.map(p => <Link to={`${location.pathname}?${qs.stringify({...query, p})}`} key={p}>{p}</Link>)
             }
             {
                 isNext && <Link to={`${location.pathname}?${qs.stringify({...query, page: currentPage + 1})}`}><a>next</a></Link>

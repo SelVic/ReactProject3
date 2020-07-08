@@ -151,7 +151,7 @@ const Pager = props => {
     })}`
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", null, "prev")), pages.map(p => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reach_router__WEBPACK_IMPORTED_MODULE_3__["Link"], {
     to: `${location.pathname}?${qs__WEBPACK_IMPORTED_MODULE_2___default.a.stringify({ ...query,
-      page
+      p
     })}`,
     key: p
   }, p)), isNext && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reach_router__WEBPACK_IMPORTED_MODULE_3__["Link"], {
@@ -283,7 +283,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var qs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! qs */ "./node_modules/qs/lib/index.js");
 /* harmony import */ var qs__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(qs__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _reach_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @reach/router */ "./node_modules/@reach/router/es/index.js");
+/* harmony import */ var _moviesApi__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./moviesApi */ "./moviesApi.js");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -339,22 +341,15 @@ class App extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       total: total,
       current: curr
     }));
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null);
   }
 
-}
+} // let TestComponent = () => {
+//     return <div className="myFont">TESTCOMPONENT</div>
+// }
+// render(<Router><App path = "/">123</App></Router>, document.querySelector("#root"))
 
-let TestComponent = () => {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "myFont"
-  }, "TESTCOMPONENT");
-};
 
-Object(react_dom__WEBPACK_IMPORTED_MODULE_2__["render"])( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reach_router__WEBPACK_IMPORTED_MODULE_4__["Router"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(App, {
-  path: "/"
-}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(TestComponent, {
-  default: true
-}))), document.querySelector("#root")); // render(<TestComponent/>, document.querySelector("#root"))
+Object(react_dom__WEBPACK_IMPORTED_MODULE_2__["render"])( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(App, null), document.querySelector("#root")); // render(<TestComponent/>, document.querySelector("#root"))
 
 /***/ }),
 

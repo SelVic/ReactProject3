@@ -48,7 +48,8 @@ gulp.task('sass-release', function () {
 });
 
 gulp.task('watch', gulp.series('sass-debugger', 'test', function () {
-    return gulp.watch(['styles/**/*.scss'], gulp.series('styles'));
+    return gulp.watch(['styles/**/*.scss'],
+           gulp.series('styles'));
 }));
 
 gulp.task('build', gulp.series('test', 'styles'));
