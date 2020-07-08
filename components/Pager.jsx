@@ -8,29 +8,26 @@ import {moviesApi} from "../moviesApi";
 
 
 const Pager = props => {
-    let visiblePagesCount = 5;
+    let visiblePagesCount = props.visiblePagesCount;
     let offset = Math.floor(visiblePagesCount / 2);
     let maxPagesCount = Math.ceil(props.total / props.pageSize) || 1;
     let pages = [];
     let start = 1;
     let query = qs.parse(location.search, {ignoreQueryPrefix: true});
-    let current = props.currentPage;
+    let currentPage = props.currentPage;
 
     if (props.currentPage > offset) {
         start = props.currentPage - offset;
-        if (start > maxPagesCount - visiblePagesCount + 1 && maxPagesCount >= visiblePagesCount)
-        {
+        if (start > maxPagesCount - visiblePagesCount + 1 && maxPagesCount >= visiblePagesCount) {
             start = maxPagesCount - visiblePagesCount + 1;
         }
     }
 
-    if (start + visiblePagesCount > maxPagesCount)
-    {
+    if (start + visiblePagesCount > maxPagesCount) {
         visiblePagesCount = Math.abs(maxPagesCount - start) + 1;
     }
 
-    for (let i = 0; i < visiblePagesCount; ++i)
-    {
+    for (let i = 0; i < visiblePagesCount; ++i) {
         pages.push(i + start);
     }
 
@@ -40,18 +37,17 @@ const Pager = props => {
     return (
         <div>
             {
-                isPrev && <Link to={`${location.pathname}?${qs.stringify({...query, page: current - 1})}`} ><span>prev</span></Link>
+                isPrev && <Link to={`${location.pathname}?${qs.stringify({...query, page: currentPage - 1})}`} >prev</Link>
             }
             {
-                pages.map(p => <Link to={`${location.pathname}?${qs.stringify({...query, p})}`} key={p}>{p}</Link>)
+                pages.map(page => <Link to={`${location.pathname}?${qs.stringify({...query, page})}`} key={page}>{page}</Link>)
             }
             {
-                isNext && <Link to={`${location.pathname}?${qs.stringify({...query, page: current + 1})}`}><span>next</span></Link>
+                isNext && <Link to={`${location.pathname}?${qs.stringify({...query, page: currentPage + 1})}`} >next</Link>
             }
         </div>
     );
 }
-
 
 Pager.propTypes = {
     currentPage: PropTypes.number,

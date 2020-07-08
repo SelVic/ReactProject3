@@ -4,22 +4,25 @@ import qs from 'qs';
 import {Link} from "@reach/router";
 import first from "lodash/first";
 import last from "lodash/last";
+import isEqual from 'lodash/isEqual';
 import {moviesApi} from "../moviesApi";
 import {Pager} from "../components/Pager";
 
 class MainMoviePage extends Component{
     state = {
+        items: [],
         page: 1,
         total: 0
     };
 
     fetch = async (params) => {
         this.setState({
-            page: +params.page
+            page: +params.page || 1
         })
-        let apiData = moviesApi.getTopList(params)
+        let response = await moviesApi.getTopList(params);
         this.setState({
-            total: apiData.total_results
+            items: response.results,
+            total: response.total_results,
         })
     }
 
@@ -48,9 +51,9 @@ class MainMoviePage extends Component{
     };
 
     render(){
-        let total = this.total;
+        let total = this.state.total;
         let curr = this.state.page;
-        return <Fragment>{this.props.children}<Pager total={total} current={curr}/></Fragment>
+        return <Pager total={total} current={curr}/>
     }
 }
 
