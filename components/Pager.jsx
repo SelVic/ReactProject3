@@ -5,31 +5,29 @@ import {Link} from "@reach/router";
 import first from "lodash/first";
 import last from "lodash/last";
 
+//отправить севрверу топмувис пейджсайз
 
 const Pager = props => {
-    let visiblePagesCount = props.visiblePagesCount;
-    let offset = Math.floor(visiblePagesCount / 2);
-    let maxPages = Math.ceil(props.total / props.pageSize) || 1;
+    let visiblePages = props.visiblePages;
+    let offset = Math.floor(visiblePages / 2);
+    let maxPages = Math.ceil(props.total / props.itemAmount) || 1;
     let pages = [];
     let start = 1;
-    let query = qs.parse(location.search, {ignoreQueryPrefix: true});
+    let search = qs.parse(location.search, {ignoreQueryPrefix: true});
     let currentPage = props.currentPage;
 
     if (props.currentPage > offset) {
         start = props.currentPage - offset;
-        if (start > maxPages - visiblePagesCount + 1 && maxPages >= visiblePagesCount) {
-            start = maxPages - visiblePagesCount + 1;
-        }
+        if (start > maxPages - visiblePages + 1 && maxPages >= visiblePages)
+            start = maxPages - visiblePages + 1;
     }
 
-    if (start + visiblePagesCount > maxPages) {
-        visiblePagesCount = Math.abs(maxPages - start) + 1;
-    }
+    if (start + visiblePages > maxPages)
+        visiblePages = Math.abs(maxPages - start) + 1;
 
-    for (let i = 0; i < visiblePagesCount; ++i) {
+    for (let i = 0; i < visiblePages; ++i) {
         pages.push(i + start);
     }
-
     //         switch (true) {
 //             case (leftHidden && !rightHidden): {
 //                 let extraPages = Paging(start - totalHidden, start - 1);
@@ -37,20 +35,19 @@ const Pager = props => {
 //                 break;
 //             }
 //             }
-
-    let PrevPage = first(pages) > 1;
-    let NextPage = last(pages) < maxPages;
-
+    /* domain.com/users/10/vasya?cat=1&page=2#hook */
+    let LeftPageButton = first(pages) > 1;
+    let RightPageButton = last(pages) < maxPages;
     return (
         <div className="pager">
             {
-                PrevPage && <Link to={`${location.pathname}?${qs.stringify({...query, page: currentPage - 1})}`}>prev</Link>
+                LeftPageButton && <Link to={`${location.pathname}?${qs.stringify({...search, page: currentPage - 1})}`}>prev</Link>
             }
             {
-                pages.map(page => <Link to={`${location.pathname}?${qs.stringify({...query, page})}`} key={page} >{page}</Link>)
+                pages.map(page => <Link to={`${location.pathname}?${qs.stringify({...search, page})}`} key={page} >{page}</Link>)
             }
             {
-                NextPage && <Link to={`${location.pathname}?${qs.stringify({...query, page: currentPage + 1})}`} >next</Link>
+                RightPageButton && <Link to={`${location.pathname}?${qs.stringify({...search, page: currentPage + 1})}`} >next</Link>
             }
         </div>
     );
@@ -58,15 +55,15 @@ const Pager = props => {
 
 Pager.propTypes = {
     currentPage: PropTypes.number,
-    pageSize: PropTypes.number,
-    visiblePagesCount: PropTypes.number,
+    itemAmount: PropTypes.number,
+    visiblePages: PropTypes.number,
     total: PropTypes.number
 }
 
 Pager.defaultProps = {
     currentPage: 1,
-    pageSize: 15,
-    visiblePagesCount: 5,
+    itemAmount: 15,
+    visiblePages: 5,
     total: 0
 }
 //

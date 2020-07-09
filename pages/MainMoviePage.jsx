@@ -37,20 +37,24 @@ class MainMoviePage extends Component{
     //     console.log(page);
     // }
     componentDidMount() {
-        let newQuery = qs.parse(this.props.location.search, {ignoreQueryPrefix: true});
-        this.fetch({page: newQuery.page});
+        let newLocation = qs.parse(this.props.location.search, {ignoreQueryPrefix: true});
+        this.fetch({page: newLocation.page});
     };
 
     componentDidUpdate(prevProps) {
-        let oldQuery = qs.parse(prevProps.location.search, {ignoreQueryPrefix: true});
-        let newQuery = qs.parse(this.props.location.search, {ignoreQueryPrefix: true});
-        if (!isEqual(oldQuery, newQuery))
-            this.fetch({page: newQuery.page});
+        let oldLocation = qs.parse(prevProps.location.search, {ignoreQueryPrefix: true});
+        let newLocation = qs.parse(this.props.location.search, {ignoreQueryPrefix: true});
+        if /*(oldQuery != newQuery)*/ (!isEqual(oldLocation,newLocation))
+            this.fetch({page: newLocation.page});
     };
 
     render(){
-        let {curr, total} = this.state;
-        return <Pager total={total} current={curr}/>
+        /*
+        * let total = this.state.total;
+        * let curr = this.state.curr;
+        * */
+        let {page, total} = this.state;
+        return <Pager total={total} currentPage={page}/>
     }
 }
 

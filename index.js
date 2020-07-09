@@ -8,6 +8,7 @@ const App = () => {
     return(
         <Router>
             <MainMoviePage path="/"/>
+            <MainMoviePage path="/user"/>
         </Router>
     )
 }

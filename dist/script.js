@@ -112,32 +112,27 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
+ //отправить севрверу топмувис пейджсайз
 
 const Pager = props => {
-  let visiblePagesCount = props.visiblePagesCount;
-  let offset = Math.floor(visiblePagesCount / 2);
-  let maxPages = Math.ceil(props.total / props.pageSize) || 1;
+  let visiblePages = props.visiblePages;
+  let offset = Math.floor(visiblePages / 2);
+  let maxPages = Math.ceil(props.total / props.itemAmount) || 1;
   let pages = [];
   let start = 1;
-  let query = qs__WEBPACK_IMPORTED_MODULE_2___default.a.parse(location.search, {
+  let search = qs__WEBPACK_IMPORTED_MODULE_2___default.a.parse(location.search, {
     ignoreQueryPrefix: true
   });
   let currentPage = props.currentPage;
 
   if (props.currentPage > offset) {
     start = props.currentPage - offset;
-
-    if (start > maxPages - visiblePagesCount + 1 && maxPages >= visiblePagesCount) {
-      start = maxPages - visiblePagesCount + 1;
-    }
+    if (start > maxPages - visiblePages + 1 && maxPages >= visiblePages) start = maxPages - visiblePages + 1;
   }
 
-  if (start + visiblePagesCount > maxPages) {
-    visiblePagesCount = Math.abs(maxPages - start) + 1;
-  }
+  if (start + visiblePages > maxPages) visiblePages = Math.abs(maxPages - start) + 1;
 
-  for (let i = 0; i < visiblePagesCount; ++i) {
+  for (let i = 0; i < visiblePages; ++i) {
     pages.push(i + start);
   } //         switch (true) {
   //             case (leftHidden && !rightHidden): {
@@ -147,22 +142,24 @@ const Pager = props => {
   //             }
   //             }
 
+  /* domain.com/users/10/vasya?cat=1&page=2#hook */
 
-  let PrevPage = lodash_first__WEBPACK_IMPORTED_MODULE_4___default()(pages) > 1;
-  let NextPage = lodash_last__WEBPACK_IMPORTED_MODULE_5___default()(pages) < maxPages;
+
+  let LeftPageButton = lodash_first__WEBPACK_IMPORTED_MODULE_4___default()(pages) > 1;
+  let RightPageButton = lodash_last__WEBPACK_IMPORTED_MODULE_5___default()(pages) < maxPages;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "pager"
-  }, PrevPage && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reach_router__WEBPACK_IMPORTED_MODULE_3__["Link"], {
-    to: `${location.pathname}?${qs__WEBPACK_IMPORTED_MODULE_2___default.a.stringify({ ...query,
+  }, LeftPageButton && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reach_router__WEBPACK_IMPORTED_MODULE_3__["Link"], {
+    to: `${location.pathname}?${qs__WEBPACK_IMPORTED_MODULE_2___default.a.stringify({ ...search,
       page: currentPage - 1
     })}`
   }, "prev"), pages.map(page => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reach_router__WEBPACK_IMPORTED_MODULE_3__["Link"], {
-    to: `${location.pathname}?${qs__WEBPACK_IMPORTED_MODULE_2___default.a.stringify({ ...query,
+    to: `${location.pathname}?${qs__WEBPACK_IMPORTED_MODULE_2___default.a.stringify({ ...search,
       page
     })}`,
     key: page
-  }, page)), NextPage && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reach_router__WEBPACK_IMPORTED_MODULE_3__["Link"], {
-    to: `${location.pathname}?${qs__WEBPACK_IMPORTED_MODULE_2___default.a.stringify({ ...query,
+  }, page)), RightPageButton && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reach_router__WEBPACK_IMPORTED_MODULE_3__["Link"], {
+    to: `${location.pathname}?${qs__WEBPACK_IMPORTED_MODULE_2___default.a.stringify({ ...search,
       page: currentPage + 1
     })}`
   }, "next"));
@@ -170,14 +167,14 @@ const Pager = props => {
 
 Pager.propTypes = {
   currentPage: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number,
-  pageSize: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number,
-  visiblePagesCount: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number,
+  itemAmount: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number,
+  visiblePages: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number,
   total: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number
 };
 Pager.defaultProps = {
   currentPage: 1,
-  pageSize: 15,
-  visiblePagesCount: 5,
+  itemAmount: 15,
+  visiblePages: 5,
   total: 0
 }; //
 // const leftPageButton = "left";
@@ -293,6 +290,8 @@ __webpack_require__.r(__webpack_exports__);
 const App = () => {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reach_router__WEBPACK_IMPORTED_MODULE_2__["Router"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_pages_MainMoviePage__WEBPACK_IMPORTED_MODULE_3__["MainMoviePage"], {
     path: "/"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_pages_MainMoviePage__WEBPACK_IMPORTED_MODULE_3__["MainMoviePage"], {
+    path: "/user"
   }));
 };
 
@@ -37871,34 +37870,40 @@ class MainMoviePage extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
   //     console.log(page);
   // }
   componentDidMount() {
-    let newQuery = qs__WEBPACK_IMPORTED_MODULE_2___default.a.parse(this.props.location.search, {
+    let newLocation = qs__WEBPACK_IMPORTED_MODULE_2___default.a.parse(this.props.location.search, {
       ignoreQueryPrefix: true
     });
     this.fetch({
-      page: newQuery.page
+      page: newLocation.page
     });
   }
 
   componentDidUpdate(prevProps) {
-    let oldQuery = qs__WEBPACK_IMPORTED_MODULE_2___default.a.parse(prevProps.location.search, {
+    let oldLocation = qs__WEBPACK_IMPORTED_MODULE_2___default.a.parse(prevProps.location.search, {
       ignoreQueryPrefix: true
     });
-    let newQuery = qs__WEBPACK_IMPORTED_MODULE_2___default.a.parse(this.props.location.search, {
+    let newLocation = qs__WEBPACK_IMPORTED_MODULE_2___default.a.parse(this.props.location.search, {
       ignoreQueryPrefix: true
     });
-    if (!lodash_isEqual__WEBPACK_IMPORTED_MODULE_6___default()(oldQuery, newQuery)) this.fetch({
-      page: newQuery.page
+    if (
+    /*(oldQuery != newQuery)*/
+    !lodash_isEqual__WEBPACK_IMPORTED_MODULE_6___default()(oldLocation, newLocation)) this.fetch({
+      page: newLocation.page
     });
   }
 
   render() {
+    /*
+    * let total = this.state.total;
+    * let curr = this.state.curr;
+    * */
     let {
-      curr,
+      page,
       total
     } = this.state;
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Pager__WEBPACK_IMPORTED_MODULE_8__["Pager"], {
       total: total,
-      current: curr
+      currentPage: page
     });
   }
 
