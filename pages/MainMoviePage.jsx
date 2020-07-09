@@ -10,18 +10,16 @@ import {Pager} from "../components/Pager";
 
 class MainMoviePage extends Component{
     state = {
-        items: [],
         page: 1,
         total: 0
     };
 
     fetch = async (params) => {
         this.setState({
-            page: +params.page || 1
+            page: +params.page
         })
         let response = await moviesApi.getTopList(params);
         this.setState({
-            items: response.results,
             total: response.total_results,
         })
     }
@@ -51,8 +49,7 @@ class MainMoviePage extends Component{
     };
 
     render(){
-        let total = this.state.total;
-        let curr = this.state.page;
+        let {curr, total} = this.state;
         return <Pager total={total} current={curr}/>
     }
 }

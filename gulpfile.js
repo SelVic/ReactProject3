@@ -6,7 +6,7 @@ let gulp = require('gulp'),
     hash = require('gulp-hash'),
     concat = require('gulp-concat-css')
 
-let styles = ['styles/styles.css'],
+let styles = ['styles/styles.scss'],
     destination = 'build';
 
 let test = ['test.js'],
@@ -26,12 +26,13 @@ gulp.task('clean', function () {
 gulp.task('styles', function () {
     return gulp.src(styles)
         .pipe(sourcemaps.init())
+        .pipe(sass())
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(destination));
 });
 
 gulp.task('sass-debugger', function () {
-    return gulp.src("styles/stylesheet1.scss")
+    return gulp.src("styles/*.scss")
         .pipe(sourcemaps.init())
         .pipe(sass())
         .pipe(sourcemaps.write('.'))
@@ -50,7 +51,7 @@ gulp.task('sass-release', function () {
 
 gulp.task('watch', gulp.series('sass-debugger', 'test', function () {
     return gulp.watch(['styles/**/*.scss'],
-           gulp.series('styles'));
+           gulp.series('sass-debugger', 'test'));
 }));
 
 gulp.task('build', gulp.series('test', 'styles'));

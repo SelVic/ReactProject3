@@ -4,13 +4,12 @@ import qs from 'qs';
 import {Link} from "@reach/router";
 import first from "lodash/first";
 import last from "lodash/last";
-import {moviesApi} from "../moviesApi";
 
 
 const Pager = props => {
     let visiblePagesCount = props.visiblePagesCount;
     let offset = Math.floor(visiblePagesCount / 2);
-    let maxPagesCount = Math.ceil(props.total / props.pageSize) || 1;
+    let maxPages = Math.ceil(props.total / props.pageSize) || 1;
     let pages = [];
     let start = 1;
     let query = qs.parse(location.search, {ignoreQueryPrefix: true});
@@ -18,32 +17,40 @@ const Pager = props => {
 
     if (props.currentPage > offset) {
         start = props.currentPage - offset;
-        if (start > maxPagesCount - visiblePagesCount + 1 && maxPagesCount >= visiblePagesCount) {
-            start = maxPagesCount - visiblePagesCount + 1;
+        if (start > maxPages - visiblePagesCount + 1 && maxPages >= visiblePagesCount) {
+            start = maxPages - visiblePagesCount + 1;
         }
     }
 
-    if (start + visiblePagesCount > maxPagesCount) {
-        visiblePagesCount = Math.abs(maxPagesCount - start) + 1;
+    if (start + visiblePagesCount > maxPages) {
+        visiblePagesCount = Math.abs(maxPages - start) + 1;
     }
 
     for (let i = 0; i < visiblePagesCount; ++i) {
         pages.push(i + start);
     }
 
-    let isPrev = first(pages) > 1;
-    let isNext = last(pages) < maxPagesCount;
+    //         switch (true) {
+//             case (leftHidden && !rightHidden): {
+//                 let extraPages = Paging(start - totalHidden, start - 1);
+//                 pages = [leftPageButton, ...extraPages, ...pages];
+//                 break;
+//             }
+//             }
+
+    let PrevPage = first(pages) > 1;
+    let NextPage = last(pages) < maxPages;
 
     return (
-        <div>
+        <div className="pager">
             {
-                isPrev && <Link to={`${location.pathname}?${qs.stringify({...query, page: currentPage - 1})}`} >prev</Link>
+                PrevPage && <Link to={`${location.pathname}?${qs.stringify({...query, page: currentPage - 1})}`}>prev</Link>
             }
             {
-                pages.map(page => <Link to={`${location.pathname}?${qs.stringify({...query, page})}`} key={page}>{page}</Link>)
+                pages.map(page => <Link to={`${location.pathname}?${qs.stringify({...query, page})}`} key={page} >{page}</Link>)
             }
             {
-                isNext && <Link to={`${location.pathname}?${qs.stringify({...query, page: currentPage + 1})}`} >next</Link>
+                NextPage && <Link to={`${location.pathname}?${qs.stringify({...query, page: currentPage + 1})}`} >next</Link>
             }
         </div>
     );
@@ -58,7 +65,7 @@ Pager.propTypes = {
 
 Pager.defaultProps = {
     currentPage: 1,
-    pageSize: 20,
+    pageSize: 15,
     visiblePagesCount: 5,
     total: 0
 }
@@ -82,9 +89,6 @@ Pager.defaultProps = {
 //     constructor(props) {
 //         super(props);
 //         let total = null;
-//         //максимальное значение смещения, а не ровно 2
-//         //стрелка видна-не видна
-//         //math.ceil math floor округление относительно нуля
 //         let sides = 2;
 //         let current = 1;
 //     }

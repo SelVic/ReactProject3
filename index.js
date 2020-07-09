@@ -4,7 +4,7 @@ import {Router} from "@reach/router";
 import {MainMoviePage} from "./pages/MainMoviePage";
 
 
-const App = (props) => {
+const App = () => {
     return(
         <Router>
             <MainMoviePage path="/"/>

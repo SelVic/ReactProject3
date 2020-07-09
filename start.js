@@ -4,7 +4,7 @@ let app = express();
 
 app.use('/dist', express.static(path.join(__dirname, 'dist')));
 
-app.use('/styles', express.static(path.join(__dirname, 'styles')));
+app.use('/build', express.static(path.join(__dirname, 'build')));
 
 app.use('/images', express.static(path.join(__dirname, 'images')));
 

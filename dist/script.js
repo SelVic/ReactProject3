@@ -107,8 +107,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var lodash_first__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(lodash_first__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var lodash_last__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! lodash/last */ "./node_modules/lodash/last.js");
 /* harmony import */ var lodash_last__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(lodash_last__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _moviesApi__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../moviesApi */ "./moviesApi.js");
-
 
 
 
@@ -119,7 +117,7 @@ __webpack_require__.r(__webpack_exports__);
 const Pager = props => {
   let visiblePagesCount = props.visiblePagesCount;
   let offset = Math.floor(visiblePagesCount / 2);
-  let maxPagesCount = Math.ceil(props.total / props.pageSize) || 1;
+  let maxPages = Math.ceil(props.total / props.pageSize) || 1;
   let pages = [];
   let start = 1;
   let query = qs__WEBPACK_IMPORTED_MODULE_2___default.a.parse(location.search, {
@@ -130,22 +128,31 @@ const Pager = props => {
   if (props.currentPage > offset) {
     start = props.currentPage - offset;
 
-    if (start > maxPagesCount - visiblePagesCount + 1 && maxPagesCount >= visiblePagesCount) {
-      start = maxPagesCount - visiblePagesCount + 1;
+    if (start > maxPages - visiblePagesCount + 1 && maxPages >= visiblePagesCount) {
+      start = maxPages - visiblePagesCount + 1;
     }
   }
 
-  if (start + visiblePagesCount > maxPagesCount) {
-    visiblePagesCount = Math.abs(maxPagesCount - start) + 1;
+  if (start + visiblePagesCount > maxPages) {
+    visiblePagesCount = Math.abs(maxPages - start) + 1;
   }
 
   for (let i = 0; i < visiblePagesCount; ++i) {
     pages.push(i + start);
-  }
+  } //         switch (true) {
+  //             case (leftHidden && !rightHidden): {
+  //                 let extraPages = Paging(start - totalHidden, start - 1);
+  //                 pages = [leftPageButton, ...extraPages, ...pages];
+  //                 break;
+  //             }
+  //             }
 
-  let isPrev = lodash_first__WEBPACK_IMPORTED_MODULE_4___default()(pages) > 1;
-  let isNext = lodash_last__WEBPACK_IMPORTED_MODULE_5___default()(pages) < maxPagesCount;
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, isPrev && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reach_router__WEBPACK_IMPORTED_MODULE_3__["Link"], {
+
+  let PrevPage = lodash_first__WEBPACK_IMPORTED_MODULE_4___default()(pages) > 1;
+  let NextPage = lodash_last__WEBPACK_IMPORTED_MODULE_5___default()(pages) < maxPages;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "pager"
+  }, PrevPage && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reach_router__WEBPACK_IMPORTED_MODULE_3__["Link"], {
     to: `${location.pathname}?${qs__WEBPACK_IMPORTED_MODULE_2___default.a.stringify({ ...query,
       page: currentPage - 1
     })}`
@@ -154,7 +161,7 @@ const Pager = props => {
       page
     })}`,
     key: page
-  }, page)), isNext && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reach_router__WEBPACK_IMPORTED_MODULE_3__["Link"], {
+  }, page)), NextPage && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reach_router__WEBPACK_IMPORTED_MODULE_3__["Link"], {
     to: `${location.pathname}?${qs__WEBPACK_IMPORTED_MODULE_2___default.a.stringify({ ...query,
       page: currentPage + 1
     })}`
@@ -169,7 +176,7 @@ Pager.propTypes = {
 };
 Pager.defaultProps = {
   currentPage: 1,
-  pageSize: 20,
+  pageSize: 15,
   visiblePagesCount: 5,
   total: 0
 }; //
@@ -192,9 +199,6 @@ Pager.defaultProps = {
 //     constructor(props) {
 //         super(props);
 //         let total = null;
-//         //максимальное значение смещения, а не ровно 2
-//         //стрелка видна-не видна
-//         //math.ceil math floor округление относительно нуля
 //         let sides = 2;
 //         let current = 1;
 //     }
@@ -286,7 +290,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const App = props => {
+const App = () => {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reach_router__WEBPACK_IMPORTED_MODULE_2__["Router"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_pages_MainMoviePage__WEBPACK_IMPORTED_MODULE_3__["MainMoviePage"], {
     path: "/"
   }));
@@ -37839,18 +37843,16 @@ class MainMoviePage extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
     super(...args);
 
     _defineProperty(this, "state", {
-      items: [],
       page: 1,
       total: 0
     });
 
     _defineProperty(this, "fetch", async params => {
       this.setState({
-        page: +params.page || 1
+        page: +params.page
       });
       let response = await _moviesApi__WEBPACK_IMPORTED_MODULE_7__["moviesApi"].getTopList(params);
       this.setState({
-        items: response.results,
         total: response.total_results
       });
     });
@@ -37890,8 +37892,10 @@ class MainMoviePage extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
   }
 
   render() {
-    let total = this.state.total;
-    let curr = this.state.page;
+    let {
+      curr,
+      total
+    } = this.state;
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Pager__WEBPACK_IMPORTED_MODULE_8__["Pager"], {
       total: total,
       current: curr
