@@ -23,7 +23,7 @@ class MainMoviePage extends Component{
             total: response.total_results,
         })
     }
-
+    //
     // componentDidMount(){
     //     let {page} = qs.parse(location.search, {ignoreQueryPrefix: true});
     //     this.setState({page});

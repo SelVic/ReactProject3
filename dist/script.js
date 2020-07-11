@@ -37857,6 +37857,7 @@ class MainMoviePage extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
     });
   }
 
+  //
   // componentDidMount(){
   //     let {page} = qs.parse(location.search, {ignoreQueryPrefix: true});
   //     this.setState({page});
