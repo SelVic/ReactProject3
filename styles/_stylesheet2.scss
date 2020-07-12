@@ -1,9 +1,23 @@
-@each $size in 10,20,30,40,50 {
-  .pb-#{$size} {
-    padding-bottom: #{$size}px;
-  }
-  .pt-#{$size} {
-    padding-top: #{$size}px;
+.pager {
+  user-select: none;
+
+  .pager-item {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    border-radius: 4px;
+    color: #fff;
+    transition: background-color 200ms;
+
+    &:hover {
+      background-color: #fff;
+      transition: background-color 200ms;
+      color: #333;
+    }
+
+    &.active {
+      background-color: #fff;
+      color: #333;
+    }
   }
 }
-
