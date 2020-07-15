@@ -1,7 +1,3 @@
-import React from "react";
+let a= "3" + 2 -1;
 
-const TestPage = () =>(
-    <div>Test12</div>
-)
-
-export default TestPage
+console.log(a)
