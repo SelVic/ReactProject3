@@ -1,9 +1,5 @@
 import React, {Component, Fragment} from 'react';
-import PropTypes from 'prop-types';
 import qs from 'qs';
-import {Link} from "@reach/router";
-import first from "lodash/first";
-import last from "lodash/last";
 import isEqual from 'lodash/isEqual';
 import {moviesApi} from "../moviesApi";
 import {Pager} from "../components/Pager";
@@ -20,6 +16,7 @@ class MainMoviePage extends Component{
         })
         let response = await moviesApi.getTopList(params);
         this.setState({
+            items: response.results,
             total: response.total_results,
         })
     }

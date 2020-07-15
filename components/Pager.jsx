@@ -39,7 +39,7 @@ const Pager = props => {
     let LeftPageButton = first(pages) > 1;
     let RightPageButton = last(pages) < maxPages;
     return (
-        <div className="pager">
+        <div className="pager mb-20">
             {
                 LeftPageButton && <Link to={`${location.pathname}?${qs.stringify({...search, page: currentPage - 1})}`}>prev</Link>
             }
