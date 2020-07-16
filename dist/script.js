@@ -172,7 +172,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
- //отправить севрверу топмувис пейджсайз
+
 
 const Pager = props => {
   let visiblePages = props.visiblePages;
@@ -212,8 +212,9 @@ const Pager = props => {
   }, LeftPageButton && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reach_router__WEBPACK_IMPORTED_MODULE_3__["Link"], {
     to: `${location.pathname}?${qs__WEBPACK_IMPORTED_MODULE_2___default.a.stringify({ ...search,
       page: currentPage - 1
-    })}`
-  }, "prev"), pages.map(page => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reach_router__WEBPACK_IMPORTED_MODULE_3__["Link"], {
+    })}`,
+    className: "pager-item"
+  }, "<–"), pages.map(page => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reach_router__WEBPACK_IMPORTED_MODULE_3__["Link"], {
     to: `${location.pathname}?${qs__WEBPACK_IMPORTED_MODULE_2___default.a.stringify({ ...search,
       page
     })}`,
@@ -222,8 +223,9 @@ const Pager = props => {
   }, page)), RightPageButton && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reach_router__WEBPACK_IMPORTED_MODULE_3__["Link"], {
     to: `${location.pathname}?${qs__WEBPACK_IMPORTED_MODULE_2___default.a.stringify({ ...search,
       page: currentPage + 1
-    })}`
-  }, "next"));
+    })}`,
+    className: "pager-item"
+  }, "–>"));
 };
 
 Pager.propTypes = {
@@ -59072,7 +59074,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _moviesApi__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../moviesApi */ "./moviesApi.js");
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Header */ "./components/Header.jsx");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -59102,15 +59106,12 @@ class ItemDataPage extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
     let {
       movieData
     } = this.state;
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", {
-      title: "\u0420\u0435\u0439\u0442\u0438\u043D\u0433"
-    }, movieData.vote_average), " ", movieData.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, movieData.overview), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "\u0414\u043B\u0438\u0442\u0435\u043B\u044C\u043D\u043E\u0441\u0442\u044C:"), " ", movieData.runtime, " \u043C\u0438\u043D"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "\u041F\u043E\u043F\u0443\u043B\u044F\u0440\u043D\u043E\u0441\u0442\u044C:"), " ", movieData.popularity), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "\u0414\u0430\u0442\u0430 \u0432\u044B\u0445\u043E\u0434\u0430:"), " ", moment__WEBPACK_IMPORTED_MODULE_2___default()(movieData.release_date).format("DD MMMM YYYY"), " ")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Header__WEBPACK_IMPORTED_MODULE_3__["Header"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", null, movieData.vote_average), " ", movieData.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, movieData.overview), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "\u0414\u043B\u0438\u0442\u0435\u043B\u044C\u043D\u043E\u0441\u0442\u044C:"), " ", movieData.runtime, " \u043C\u0438\u043D\u0443\u0442"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "\u041F\u043E\u043F\u0443\u043B\u044F\u0440\u043D\u043E\u0441\u0442\u044C:"), " ", movieData.popularity), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "\u0414\u0430\u0442\u0430 \u0432\u044B\u0445\u043E\u0434\u0430:"), " ", moment__WEBPACK_IMPORTED_MODULE_2___default()(movieData.release_date).format("DD MMMM YYYY"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
       style: {
         maxWidth: '100%'
       },
-      src: `https://image.tmdb.org/t/p/w500${movieData.poster_path}`,
-      alt: movieData.title
-    })))));
+      src: `https://image.tmdb.org/t/p/w500${movieData.poster_path}`
+    }))))));
   }
 
 }
@@ -59225,7 +59226,8 @@ class MainMoviePage extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
     }, items.map(mov => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Item__WEBPACK_IMPORTED_MODULE_5__["Item"], {
       key: mov.id,
       movie: mov,
-      width: 300
+      width: 300,
+      className: "gallery-item"
     }))));
   }
 

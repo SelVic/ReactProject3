@@ -1,0 +1,24 @@
+.pager {
+  user-select: none;
+
+  .pager-item {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    border-radius: 15px;
+    font-weight: bolder;
+    background-color: darkgrey;
+    align-items: center;
+    justify-content: center;
+    color: #333333;
+    border: 2px solid black;
+    margin-left: 5px;
+
+
+    &:hover {
+      background-color: brown;
+      color: #333;
+      cursor: pointer;
+    }
+  }
+}

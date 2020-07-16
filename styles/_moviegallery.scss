@@ -1,5 +1,14 @@
 .gallery {
-  display: flex;
-  margin-left: 20px;
-  margin-top: 40px;
+  margin-bottom: 50px;
+  display: grid;
+  grid-template-columns: 230px 230px 230px 230px 230px;
+  grid-gap: 130px;
+  margin-left: 50px;
+  margin-top: 50px;
+  .gallery-item{
+    &:hover{
+      cursor: pointer;
+    }
+  }
+
 }

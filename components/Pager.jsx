@@ -5,7 +5,6 @@ import {Link} from "@reach/router";
 import first from "lodash/first";
 import last from "lodash/last";
 
-//отправить севрверу топмувис пейджсайз
 
 const Pager = props => {
     let visiblePages = props.visiblePages;
@@ -41,13 +40,13 @@ const Pager = props => {
     return (
         <div className="pager ml-30 mt-20">
             {
-                LeftPageButton && <Link to={`${location.pathname}?${qs.stringify({...search, page: currentPage - 1})}`} >prev</Link>
+                LeftPageButton && <Link to={`${location.pathname}?${qs.stringify({...search, page: currentPage - 1})}`} className = "pager-item">{"<–"}</Link>
             }
             {
                 pages.map(page => <Link to={`${location.pathname}?${qs.stringify({...search, page})}`} key={page} className = "pager-item">{page}</Link>)
             }
             {
-                RightPageButton && <Link to={`${location.pathname}?${qs.stringify({...search, page: currentPage + 1})}`} >next</Link>
+                RightPageButton && <Link to={`${location.pathname}?${qs.stringify({...search, page: currentPage + 1})}`} className = "pager-item">{"–>"}</Link>
             }
         </div>
     );

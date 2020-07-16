@@ -4,21 +4,28 @@
     width: 40px;
     height: 40px;
     display: inline-flex;
-    border-radius: 4px;
-    background-color: red;
-    text-align: center;
-    justify-content: center; }
+    border-radius: 15px;
+    font-weight: bolder;
+    background-color: darkgrey;
+    align-items: center;
+    justify-content: center;
+    color: #333333;
+    border: 2px solid black;
+    margin-left: 5px; }
     .pager .pager-item:hover {
       background-color: brown;
-      color: #333; }
-    .pager .pager-item.active {
-      background-color: brown;
-      color: #333; }
+      color: #333;
+      cursor: pointer; }
 
 .gallery {
-  display: flex;
-  margin-left: 20px;
-  margin-top: 40px; }
+  margin-bottom: 50px;
+  display: grid;
+  grid-template-columns: 230px 230px 230px 230px 230px;
+  grid-gap: 130px;
+  margin-left: 50px;
+  margin-top: 50px; }
+  .gallery .gallery-item:hover {
+    cursor: pointer; }
 
 .header {
   display: inline-block;

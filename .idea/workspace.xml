@@ -5,14 +5,14 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/styles.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/build/styles.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Header.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/Pager.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Pager.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/script.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/script.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/script.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/ItemDataPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/ItemDataPage.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/MainMoviePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/MainMoviePage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/_stylesheet1.scss" beforeDir="false" afterPath="$PROJECT_DIR$/styles/_stylesheet1.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/styles/styles.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/_moviegallery.scss" beforeDir="false" afterPath="$PROJECT_DIR$/styles/_moviegallery.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/_pager.scss" beforeDir="false" afterPath="$PROJECT_DIR$/styles/_pager.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/_stylesheet2.scss" beforeDir="false" afterPath="$PROJECT_DIR$/styles/_stylesheet2.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -200,7 +200,7 @@
       <workItem from="1594585157864" duration="128000" />
       <workItem from="1594761444718" duration="443000" />
       <workItem from="1594824773599" duration="5620000" />
-      <workItem from="1594904100560" duration="3897000" />
+      <workItem from="1594904100560" duration="5238000" />
     </task>
     <servers />
   </component>
@@ -212,10 +212,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="414" y="176" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1590428876804" />
-    <state x="740" y="276" key="FileChooserDialogImpl" timestamp="1594912595395">
+    <state x="740" y="276" key="FileChooserDialogImpl" timestamp="1594914135831">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="276" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1594912595395" />
+    <state x="740" y="276" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1594914135831" />
     <state width="1898" height="237" key="GridCell.Tab.0.bottom" timestamp="1594912543070">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

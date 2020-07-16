@@ -61,7 +61,7 @@ class MainMoviePage extends Component{
                 <Pager total={total} currentPage={page}/>
                 <div className = "gallery">
                     {
-                        items.map(mov => <Item key = {mov.id} movie = {mov} width = {300} />)
+                        items.map(mov => <Item key = {mov.id} movie = {mov} width = {300} className = "gallery-item"/>)
                     }
                 </div>
             </Fragment>
