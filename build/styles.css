@@ -15,4 +15,96 @@
       background-color: brown;
       color: #333; }
 
+.gallery {
+  display: flex;
+  margin-left: 20px;
+  margin-top: 40px; }
+
+.header {
+  display: inline-block;
+  line-height: 60px;
+  width: 100%;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  font-size: 45px;
+  font-weight: bolder;
+  background: #fbecc0;
+  background: radial-gradient(circle, #fbecc0 67%, #fffef0 85%);
+  box-shadow: 0px 5px 20px -5px black;
+  position: relative; }
+
+html {
+  overflow-y: scroll;
+  min-height: 100vh;
+  background-color: burlywood;
+  color: #fff; }
+
+body {
+  margin: 0;
+  min-height: 100vh; }
+
+#root {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto; }
+
+.container {
+  max-width: 1280px;
+  margin: auto; }
+
+.mb-10 {
+  margin-bottom: 10px; }
+
+.mt-10 {
+  margin-top: 10px; }
+
+.ml-10 {
+  margin-left: 10px; }
+
+.mb-20 {
+  margin-bottom: 20px; }
+
+.mt-20 {
+  margin-top: 20px; }
+
+.ml-20 {
+  margin-left: 20px; }
+
+.mb-30 {
+  margin-bottom: 30px; }
+
+.mt-30 {
+  margin-top: 30px; }
+
+.ml-30 {
+  margin-left: 30px; }
+
+.mb-40 {
+  margin-bottom: 40px; }
+
+.mt-40 {
+  margin-top: 40px; }
+
+.ml-40 {
+  margin-left: 40px; }
+
+.mb-50 {
+  margin-bottom: 50px; }
+
+.mt-50 {
+  margin-top: 50px; }
+
+.ml-50 {
+  margin-left: 50px; }
+
+.mb-150 {
+  margin-bottom: 150px; }
+
+.mt-150 {
+  margin-top: 150px; }
+
+.ml-150 {
+  margin-left: 150px; }
+
 /*# sourceMappingURL=styles.css.map */

@@ -28,10 +28,9 @@ class ItemDataPage extends Component {
                         <div>
                             <div>
                                 <div>{movieData.overview}</div>
-                                <div><b>Длительность:</b> {movieData.runtime} мин</div>
-                                <div><b>Популярность:</b> {movieData.popularity}</div>
-                                <div><b>Дата выхода:</b> {moment(movieData.release_date).format("DD MMMM YYYY")} </div>
-                                <div><b>Жанр:</b> {movieData.genres.map((genre, i) => genre.name).join(', ')}</div>
+                                <div><h2>Длительность:</h2> {movieData.runtime} мин</div>
+                                <div><h2>Популярность:</h2> {movieData.popularity}</div>
+                                <div><h2>Дата выхода:</h2> {moment(movieData.release_date).format("DD MMMM YYYY")} </div>
                             </div>
                             <div>
                                 <img style={{maxWidth: '100%'}} src={`https://image.tmdb.org/t/p/w500${movieData.poster_path}`} alt={movieData.title}/>

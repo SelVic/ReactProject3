@@ -4,6 +4,7 @@ import isEqual from 'lodash/isEqual';
 import {moviesApi} from "../moviesApi";
 import {Pager} from "../components/Pager";
 import {Item} from "../components/Item";
+import {Header} from "../components/Header";
 
 
 class MainMoviePage extends Component{
@@ -56,10 +57,11 @@ class MainMoviePage extends Component{
         let {items, page, total} = this.state;
         return (
             <Fragment>
+                <Header/>
                 <Pager total={total} currentPage={page}/>
-                <div>
+                <div className = "gallery">
                     {
-                        items.map(mov => <Item key = {mov.id} movie = {mov} width = {300}/>)
+                        items.map(mov => <Item key = {mov.id} movie = {mov} width = {300} />)
                     }
                 </div>
             </Fragment>

@@ -86,6 +86,30 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./components/Header.jsx":
+/*!*******************************!*\
+  !*** ./components/Header.jsx ***!
+  \*******************************/
+/*! exports provided: Header */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Header", function() { return Header; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+const Header = () => {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "header"
+  }, "\u041A\u0438\u043D\u043E\u0441\u043F\u0440\u0430\u0432\u043E\u0447\u043D\u0438\u043A");
+};
+
+
+
+/***/ }),
+
 /***/ "./components/Item.jsx":
 /*!*****************************!*\
   !*** ./components/Item.jsx ***!
@@ -184,7 +208,7 @@ const Pager = props => {
   let LeftPageButton = lodash_first__WEBPACK_IMPORTED_MODULE_4___default()(pages) > 1;
   let RightPageButton = lodash_last__WEBPACK_IMPORTED_MODULE_5___default()(pages) < maxPages;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "pager"
+    className: "pager ml-30 mt-20"
   }, LeftPageButton && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reach_router__WEBPACK_IMPORTED_MODULE_3__["Link"], {
     to: `${location.pathname}?${qs__WEBPACK_IMPORTED_MODULE_2___default.a.stringify({ ...search,
       page: currentPage - 1
@@ -59080,7 +59104,7 @@ class ItemDataPage extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
     } = this.state;
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", {
       title: "\u0420\u0435\u0439\u0442\u0438\u043D\u0433"
-    }, movieData.vote_average), " ", movieData.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, movieData.overview), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", null, "\u0414\u043B\u0438\u0442\u0435\u043B\u044C\u043D\u043E\u0441\u0442\u044C:"), " ", movieData.runtime, " \u043C\u0438\u043D"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", null, "\u041F\u043E\u043F\u0443\u043B\u044F\u0440\u043D\u043E\u0441\u0442\u044C:"), " ", movieData.popularity), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", null, "\u0414\u0430\u0442\u0430 \u0432\u044B\u0445\u043E\u0434\u0430:"), " ", moment__WEBPACK_IMPORTED_MODULE_2___default()(movieData.release_date).format("DD MMMM YYYY"), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", null, "\u0416\u0430\u043D\u0440:"), " ", movieData.genres.map((genre, i) => genre.name).join(', '))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    }, movieData.vote_average), " ", movieData.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, movieData.overview), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "\u0414\u043B\u0438\u0442\u0435\u043B\u044C\u043D\u043E\u0441\u0442\u044C:"), " ", movieData.runtime, " \u043C\u0438\u043D"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "\u041F\u043E\u043F\u0443\u043B\u044F\u0440\u043D\u043E\u0441\u0442\u044C:"), " ", movieData.popularity), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "\u0414\u0430\u0442\u0430 \u0432\u044B\u0445\u043E\u0434\u0430:"), " ", moment__WEBPACK_IMPORTED_MODULE_2___default()(movieData.release_date).format("DD MMMM YYYY"), " ")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
       style: {
         maxWidth: '100%'
       },
@@ -59114,7 +59138,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _moviesApi__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../moviesApi */ "./moviesApi.js");
 /* harmony import */ var _components_Pager__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Pager */ "./components/Pager.jsx");
 /* harmony import */ var _components_Item__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Item */ "./components/Item.jsx");
+/* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/Header */ "./components/Header.jsx");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -59191,10 +59217,12 @@ class MainMoviePage extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       page,
       total
     } = this.state;
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Pager__WEBPACK_IMPORTED_MODULE_4__["Pager"], {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Header__WEBPACK_IMPORTED_MODULE_6__["Header"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Pager__WEBPACK_IMPORTED_MODULE_4__["Pager"], {
       total: total,
       currentPage: page
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, items.map(mov => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Item__WEBPACK_IMPORTED_MODULE_5__["Item"], {
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "gallery"
+    }, items.map(mov => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Item__WEBPACK_IMPORTED_MODULE_5__["Item"], {
       key: mov.id,
       movie: mov,
       width: 300

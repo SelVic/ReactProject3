@@ -1,0 +1,22 @@
+html {
+  overflow-y: scroll;
+  min-height: 100vh;
+  background-color: burlywood;
+  color: #fff;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.container {
+  max-width: 1280px;
+  margin: auto;
+}
