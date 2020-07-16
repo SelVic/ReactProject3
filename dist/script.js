@@ -319,6 +319,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _reach_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @reach/router */ "./node_modules/@reach/router/es/index.js");
 /* harmony import */ var _pages_MainMoviePage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pages/MainMoviePage */ "./pages/MainMoviePage.jsx");
+/* harmony import */ var _pages_ItemDataPage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pages/ItemDataPage */ "./pages/ItemDataPage.jsx");
+
 
 
 
@@ -329,6 +331,8 @@ const App = () => {
     path: "/"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_pages_MainMoviePage__WEBPACK_IMPORTED_MODULE_3__["MainMoviePage"], {
     path: "/user"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_pages_ItemDataPage__WEBPACK_IMPORTED_MODULE_4__["ItemDataPage"], {
+    path: "/movie/:id"
   }));
 };
 
@@ -59029,6 +59033,68 @@ module.exports = function(module) {
 
 /***/ }),
 
+/***/ "./pages/ItemDataPage.jsx":
+/*!********************************!*\
+  !*** ./pages/ItemDataPage.jsx ***!
+  \********************************/
+/*! exports provided: ItemDataPage */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ItemDataPage", function() { return ItemDataPage; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _moviesApi__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../moviesApi */ "./moviesApi.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_2__);
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+class ItemDataPage extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+  constructor(...args) {
+    super(...args);
+
+    _defineProperty(this, "state", {
+      movieData: {}
+    });
+
+    _defineProperty(this, "componentDidMount", () => {
+      this.fetch(this.props.id);
+    });
+
+    _defineProperty(this, "fetch", async id => {
+      let movieData = await _moviesApi__WEBPACK_IMPORTED_MODULE_1__["moviesApi"].getMovie(id);
+      this.setState({
+        movieData: movieData
+      });
+    });
+  }
+
+  render() {
+    let {
+      movieData
+    } = this.state;
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", {
+      title: "\u0420\u0435\u0439\u0442\u0438\u043D\u0433"
+    }, movieData.vote_average), " ", movieData.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, movieData.overview), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", null, "\u0414\u043B\u0438\u0442\u0435\u043B\u044C\u043D\u043E\u0441\u0442\u044C:"), " ", movieData.runtime, " \u043C\u0438\u043D"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", null, "\u041F\u043E\u043F\u0443\u043B\u044F\u0440\u043D\u043E\u0441\u0442\u044C:"), " ", movieData.popularity), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", null, "\u0414\u0430\u0442\u0430 \u0432\u044B\u0445\u043E\u0434\u0430:"), " ", moment__WEBPACK_IMPORTED_MODULE_2___default()(movieData.release_date).format("DD MMMM YYYY"), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", null, "\u0416\u0430\u043D\u0440:"), " ", movieData.genres.map((genre, i) => genre.name).join(', '))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+      style: {
+        maxWidth: '100%'
+      },
+      src: `https://image.tmdb.org/t/p/w500${movieData.poster_path}`,
+      alt: movieData.title
+    })))));
+  }
+
+}
+
+
+
+/***/ }),
+
 /***/ "./pages/MainMoviePage.jsx":
 /*!*********************************!*\
   !*** ./pages/MainMoviePage.jsx ***!
@@ -59128,7 +59194,7 @@ class MainMoviePage extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Pager__WEBPACK_IMPORTED_MODULE_4__["Pager"], {
       total: total,
       currentPage: page
-    }), "]", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, items.map(mov => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Item__WEBPACK_IMPORTED_MODULE_5__["Item"], {
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, items.map(mov => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Item__WEBPACK_IMPORTED_MODULE_5__["Item"], {
       key: mov.id,
       movie: mov,
       width: 300

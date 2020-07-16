@@ -56,7 +56,7 @@ class MainMoviePage extends Component{
         let {items, page, total} = this.state;
         return (
             <Fragment>
-                <Pager total={total} currentPage={page}/>]
+                <Pager total={total} currentPage={page}/>
                 <div>
                     {
                         items.map(mov => <Item key = {mov.id} movie = {mov} width = {300}/>)
