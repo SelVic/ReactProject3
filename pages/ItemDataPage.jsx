@@ -18,7 +18,6 @@ class ItemDataPage extends Component {
             movieData: movieData,
         })
     };
-
     render() {
         let {movieData} = this.state;
         return (

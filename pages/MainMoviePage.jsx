@@ -16,7 +16,7 @@ class MainMoviePage extends Component{
 
     fetch = async (params) => {
         this.setState({
-            page: +params.page
+            page: +params.page || 1
         })
         let response = await moviesApi.getTopList(params);
         this.setState({
@@ -24,19 +24,7 @@ class MainMoviePage extends Component{
             total: response.total_results,
         })
     }
-    //
-    // componentDidMount(){
-    //     let {page} = qs.parse(location.search, {ignoreQueryPrefix: true});
-    //     this.setState({page});
-    //     console.log(page);
-    // }
-    // componentDidUpdate(prevProps, prevState){
-    //     let {page} = qs.parse(location.search, {ignoreQueryPrefix: true});
-    //     if (prevState.page !== page) {
-    //         this.setState({page});
-    //     }
-    //     console.log(page);
-    // }
+
     componentDidMount() {
         let newLocation = qs.parse(this.props.location.search, {ignoreQueryPrefix: true});
         this.fetch({page: newLocation.page});
@@ -61,7 +49,7 @@ class MainMoviePage extends Component{
                 <Pager total={total} currentPage={page}/>
                 <div className = "gallery">
                     {
-                        items.map(mov => <Item key = {mov.id} movie = {mov} width = {300} className = "gallery-item"/>)
+                        items.map(mov => <Item key = {mov.id} movie = {mov} width = "100%" className = "gallery-item"/>)
                     }
                 </div>
             </Fragment>

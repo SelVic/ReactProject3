@@ -172,7 +172,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
+ //trailing/trail slash
+//анимация css см. ссылку с templatemonster
+//сделать fade при переходе на конкретный фильм
+//fade при запуске сайта
 
 const Pager = props => {
   let visiblePages = props.visiblePages;
@@ -59162,7 +59165,7 @@ class MainMoviePage extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 
     _defineProperty(this, "fetch", async params => {
       this.setState({
-        page: +params.page
+        page: +params.page || 1
       });
       let response = await _moviesApi__WEBPACK_IMPORTED_MODULE_3__["moviesApi"].getTopList(params);
       this.setState({
@@ -59172,19 +59175,6 @@ class MainMoviePage extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
     });
   }
 
-  //
-  // componentDidMount(){
-  //     let {page} = qs.parse(location.search, {ignoreQueryPrefix: true});
-  //     this.setState({page});
-  //     console.log(page);
-  // }
-  // componentDidUpdate(prevProps, prevState){
-  //     let {page} = qs.parse(location.search, {ignoreQueryPrefix: true});
-  //     if (prevState.page !== page) {
-  //         this.setState({page});
-  //     }
-  //     console.log(page);
-  // }
   componentDidMount() {
     let newLocation = qs__WEBPACK_IMPORTED_MODULE_1___default.a.parse(this.props.location.search, {
       ignoreQueryPrefix: true
@@ -59226,7 +59216,7 @@ class MainMoviePage extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
     }, items.map(mov => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Item__WEBPACK_IMPORTED_MODULE_5__["Item"], {
       key: mov.id,
       movie: mov,
-      width: 300,
+      width: "100%",
       className: "gallery-item"
     }))));
   }

@@ -5,6 +5,10 @@ import {Link} from "@reach/router";
 import first from "lodash/first";
 import last from "lodash/last";
 
+//trailing/trail slash
+//анимация css см. ссылку с templatemonster
+//сделать fade при переходе на конкретный фильм
+//fade при запуске сайта
 
 const Pager = props => {
     let visiblePages = props.visiblePages;
