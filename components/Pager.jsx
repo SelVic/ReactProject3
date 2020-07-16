@@ -39,9 +39,9 @@ const Pager = props => {
     let LeftPageButton = first(pages) > 1;
     let RightPageButton = last(pages) < maxPages;
     return (
-        <div className="pager mb-20">
+        <div className="pager">
             {
-                LeftPageButton && <Link to={`${location.pathname}?${qs.stringify({...search, page: currentPage - 1})}`}>prev</Link>
+                LeftPageButton && <Link to={`${location.pathname}?${qs.stringify({...search, page: currentPage - 1})}`} >prev</Link>
             }
             {
                 pages.map(page => <Link to={`${location.pathname}?${qs.stringify({...search, page})}`} key={page} className = "pager-item">{page}</Link>)

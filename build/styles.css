@@ -1,2 +1,18 @@
+.pager {
+  user-select: none; }
+  .pager .pager-item {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    border-radius: 4px;
+    background-color: red;
+    text-align: center;
+    justify-content: center; }
+    .pager .pager-item:hover {
+      background-color: brown;
+      color: #333; }
+    .pager .pager-item.active {
+      background-color: brown;
+      color: #333; }
 
 /*# sourceMappingURL=styles.css.map */

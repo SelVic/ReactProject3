@@ -6,17 +6,17 @@
     height: 40px;
     display: inline-flex;
     border-radius: 4px;
-    color: #fff;
-    transition: background-color 200ms;
+    background-color: red;
+    text-align: center;
+    justify-content: center;
 
     &:hover {
-      background-color: #fff;
-      transition: background-color 200ms;
+      background-color: brown;
       color: #333;
     }
 
     &.active {
-      background-color: #fff;
+      background-color: brown;
       color: #333;
     }
   }

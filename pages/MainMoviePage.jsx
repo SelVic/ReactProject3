@@ -3,9 +3,12 @@ import qs from 'qs';
 import isEqual from 'lodash/isEqual';
 import {moviesApi} from "../moviesApi";
 import {Pager} from "../components/Pager";
+import {Item} from "../components/Item";
+
 
 class MainMoviePage extends Component{
     state = {
+        items: [],
         page: 1,
         total: 0
     };
@@ -50,8 +53,19 @@ class MainMoviePage extends Component{
         * let total = this.state.total;
         * let curr = this.state.curr;
         * */
-        let {page, total} = this.state;
-        return <Pager total={total} currentPage={page}/>
+        let {items, page, total} = this.state;
+        return (
+            <Fragment>
+                <Pager total={total} currentPage={page}/>]
+                <div>
+                    {
+                        items.map(mov => <Item key = {mov.id} movie = {mov} width = {300}/>)
+                    }
+                </div>
+            </Fragment>
+
+            )
+
     }
 }
 
