@@ -10,6 +10,7 @@ import last from "lodash/last";
 //сделать fade при переходе на конкретный фильм
 //fade при запуске сайта
 //
+//
 
 const Pager = props => {
     let visiblePages = props.visiblePages;
