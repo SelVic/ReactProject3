@@ -11,6 +11,7 @@ import last from "lodash/last";
 //fade при запуске сайта
 //
 //
+//
 
 const Pager = props => {
     let visiblePages = props.visiblePages;

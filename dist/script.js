@@ -176,6 +176,9 @@ __webpack_require__.r(__webpack_exports__);
 //анимация css см. ссылку с templatemonster
 //сделать fade при переходе на конкретный фильм
 //fade при запуске сайта
+//
+//
+//
 
 const Pager = props => {
   let visiblePages = props.visiblePages;
