@@ -8,6 +8,8 @@ app.use('/build', express.static(path.join(__dirname, 'build')));
 
 app.use('/images', express.static(path.join(__dirname, 'images')));
 
+app.use('/fonts', express.static(path.join(__dirname, 'fonts')));
+
 app.get(['/', '/user', "/movie/:id"], function(req, res) {
     res.sendFile(__dirname + '/index.html');
 });

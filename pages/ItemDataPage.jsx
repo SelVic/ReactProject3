@@ -2,32 +2,55 @@ import React, {Component, Fragment} from "react";
 import {moviesApi} from "../moviesApi";
 import moment from "moment";
 import {Header} from "../components/Header";
+import {Link} from "@reach/router";
+import qs from "qs";
+import isEqual from "lodash/isEqual";
+import {ProgressBar} from "../components/ProgressBar";
 
 class ItemDataPage extends Component {
     state = {
+        fetchProgress: false,
+        fetchDone: false,
         movieData: {},
+        similarItems: []
     }
 
-    componentDidMount = () => {
+    componentDidMount() {
         this.fetch(this.props.id);
     };
 
+    // componentDidUpdate(prevProps) {
+    //     let oldLocation = qs.parse(prevProps.location.search, {ignoreQueryPrefix: true});
+    //     let newLocation = qs.parse(this.props.location.search, {ignoreQueryPrefix: true});
+    //     if /*(oldQuery != newQuery)*/ (!isEqual(oldLocation,newLocation))
+    //         this.fetch({page: newLocation.page});
+    // };
+
     fetch = async (id) => {
+        this.setState({
+            fetchProgress: true,
+            fetchDone: false
+        })
         let movieData = await moviesApi.getMovie(id);
+        let similarItems = await moviesApi.getIdentical(id);
         this.setState({
             movieData: movieData,
+            similarItems:similarItems.results,
+            fetchProgress: false,
+            fetchDone: true
         })
     };
     render() {
-        let {movieData} = this.state;
+        let {movieData, similarItems, fetchProgress, fetchDone} = this.state;
         return (
             <Fragment>
                 <Header/>
-            <div>
-                <h1><b>{movieData.vote_average}</b> {movieData.title}</h1>
+            <div className="fade-in">
+                <h1 className="ml-150"><b>{movieData.vote_average}</b> {movieData.title} <ProgressBar isLoading = {fetchProgress}/></h1>
                 {
+                    fetchDone &&
                     <Fragment>
-                        <div>
+                        <div className="item-details ml-50">
                             <div>
                                 <div>{movieData.overview}</div>
                                 <div><h2>Длительность:</h2> {movieData.runtime} минут</div>
@@ -41,6 +64,12 @@ class ItemDataPage extends Component {
                     </Fragment>
                 }
             </div>
+                <div className="similars-header-display fade-in">Схожие фильмы</div>
+                <div className="similars">
+                    {
+                        similarItems.map(m => (<Link className="similars-text" key={m.id} to={`/movie/${m.id}`}> <img src={`https://image.tmdb.org/t/p/w200${m.poster_path}`}/> <div>{m.title}</div> </Link>))
+                    }
+                </div>
             </Fragment>
         );
     }

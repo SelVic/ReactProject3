@@ -2,13 +2,13 @@
   display: inline-block;
   line-height: 60px;
   width: 100%;
-  color: black;
+  color: white;
   text-align: center;
   text-decoration: none;
   font-size: 45px;
   font-weight: bolder;
-  background: rgb(251,236,192);
-  background: radial-gradient(circle, rgba(251,236,192,1) 67%, rgba(255,254,240,1) 85%);
+  background-color: #131313;
   box-shadow: 0px 5px 20px -5px rgba(0, 0, 0, 1);
-  position: relative
+  position: relative;
+  font-family: vollkornregular;
 }

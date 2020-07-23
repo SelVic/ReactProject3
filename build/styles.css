@@ -20,31 +20,66 @@
 .gallery {
   margin-bottom: 50px;
   display: grid;
-  grid-template-columns: 230px 230px 230px 230px 230px;
-  grid-gap: 130px;
+  grid-template-columns: 300px 300px 300px 300px 300px;
+  grid-gap: 80px;
   margin-left: 50px;
-  margin-top: 50px; }
+  margin-top: 50px;
+  transition: transform .3s; }
   .gallery .gallery-item:hover {
     cursor: pointer; }
+  .gallery .gallery-item-img:hover {
+    transition: transform .3s;
+    transform: scale(1.15); }
+  .gallery .gallery-text {
+    font-family: vollkornregular;
+    color: white;
+    font-size: 20px;
+    font-weight: revert;
+    text-decoration: none; }
+
+.similars {
+  margin-top: 50px;
+  margin-left: 150px;
+  display: grid;
+  grid-template-columns: 200px 200px 200px 200px 200px;
+  grid-gap: 150px; }
+  .similars .similars-text {
+    font-family: vollkornregular;
+    color: white;
+    font-size: 20px;
+    font-weight: revert;
+    text-decoration: none; }
+
+.similars-header-display {
+  margin-top: 50px;
+  text-align: center;
+  font-size: 45px;
+  line-height: 50px;
+  background-color: #131313;
+  box-shadow: 0px 5px 5px -5px black;
+  position: relative;
+  font-weight: bolder;
+  font-family: vollkornregular; }
 
 .header {
   display: inline-block;
   line-height: 60px;
   width: 100%;
-  color: black;
+  color: white;
   text-align: center;
   text-decoration: none;
   font-size: 45px;
   font-weight: bolder;
-  background: #fbecc0;
-  background: radial-gradient(circle, #fbecc0 67%, #fffef0 85%);
+  background-color: #131313;
   box-shadow: 0px 5px 20px -5px black;
-  position: relative; }
+  position: relative;
+  font-family: vollkornregular; }
 
 html {
   overflow-y: scroll;
   min-height: 100vh;
-  background-color: darkseagreen;
+  background: #797979;
+  background: radial-gradient(circle, #797979 0%, #363636 100%);
   color: #fff; }
 
 body {
@@ -69,6 +104,9 @@ body {
 .ml-10 {
   margin-left: 10px; }
 
+.mr-10 {
+  margin-right: 10px; }
+
 .mb-20 {
   margin-bottom: 20px; }
 
@@ -77,6 +115,9 @@ body {
 
 .ml-20 {
   margin-left: 20px; }
+
+.mr-20 {
+  margin-right: 20px; }
 
 .mb-30 {
   margin-bottom: 30px; }
@@ -87,6 +128,9 @@ body {
 .ml-30 {
   margin-left: 30px; }
 
+.mr-30 {
+  margin-right: 30px; }
+
 .mb-40 {
   margin-bottom: 40px; }
 
@@ -95,6 +139,9 @@ body {
 
 .ml-40 {
   margin-left: 40px; }
+
+.mr-40 {
+  margin-right: 40px; }
 
 .mb-50 {
   margin-bottom: 50px; }
@@ -105,6 +152,9 @@ body {
 .ml-50 {
   margin-left: 50px; }
 
+.mr-50 {
+  margin-right: 50px; }
+
 .mb-150 {
   margin-bottom: 150px; }
 
@@ -113,5 +163,49 @@ body {
 
 .ml-150 {
   margin-left: 150px; }
+
+.mr-150 {
+  margin-right: 150px; }
+
+.fade-in {
+  animation: fadeIn ease 2s;
+  -webkit-animation: fadeIn ease 2s; }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@font-face {
+  font-family: 'vollkornregular';
+  src: url("/fonts/vollkorn-variablefont_wght-webfont.woff2") format("woff2"), url("/fonts/vollkorn-variablefont_wght-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+.item-details {
+  display: grid;
+  grid-gap: 80px;
+  grid-template-columns: 1fr 1fr;
+  font-size: 19px;
+  font-family: vollkornregular; }
+
+.item {
+  text-decoration: none; }
+  .item .item-text {
+    font-family: vollkornregular;
+    grid-template-columns: 30% 70%;
+    display: grid;
+    color: white;
+    font-size: 20px; }
+    .item .item-text .item-text-ratio {
+      font-size: 45px;
+      font-weight: bold; }
 
 /*# sourceMappingURL=styles.css.map */

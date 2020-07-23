@@ -5,12 +5,11 @@ import {MainMoviePage} from "./pages/MainMoviePage";
 import {ItemDataPage} from "./pages/ItemDataPage";
 
 
-const App = () => {
+const App = (props) => {
     return(
         <Router>
-            <MainMoviePage path="/"/>
-            <MainMoviePage path="/user"/>
-            <ItemDataPage path = "/movie/:id"/>
+            <MainMoviePage exact path="/"/>
+            <ItemDataPage exact path = "/movie/:id"/>
         </Router>
     )
 }

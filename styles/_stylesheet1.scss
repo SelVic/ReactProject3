@@ -8,4 +8,7 @@
   .ml-#{$size} {
     margin-left: #{$size}px;
   }
+  .mr-#{$size} {
+    margin-right: #{$size}px;
+  }
 }

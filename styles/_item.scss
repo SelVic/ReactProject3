@@ -1,0 +1,21 @@
+.item-details{
+  display: grid;
+  grid-gap: 80px;
+  grid-template-columns: 1fr 1fr;
+  font-size: 19px;
+  font-family: vollkornregular;
+}
+.item{
+  text-decoration: none;
+  .item-text{
+    font-family: vollkornregular;
+    grid-template-columns: 30% 70%;
+    display: grid;
+    color:white;
+    font-size:20px;
+    .item-text-ratio{
+      font-size: 45px;
+      font-weight: bold;
+    }
+  }
+}
