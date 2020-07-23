@@ -3,7 +3,6 @@ import {moviesApi} from "../moviesApi";
 import moment from "moment";
 import {Header} from "../components/Header";
 import {Link} from "@reach/router";
-import qs from "qs";
 import isEqual from "lodash/isEqual";
 import {ProgressBar} from "../components/ProgressBar";
 
@@ -19,12 +18,10 @@ class ItemDataPage extends Component {
         this.fetch(this.props.id);
     };
 
-    // componentDidUpdate(prevProps) {
-    //     let oldLocation = qs.parse(prevProps.location.search, {ignoreQueryPrefix: true});
-    //     let newLocation = qs.parse(this.props.location.search, {ignoreQueryPrefix: true});
-    //     if /*(oldQuery != newQuery)*/ (!isEqual(oldLocation,newLocation))
-    //         this.fetch({page: newLocation.page});
-    // };
+    componentDidUpdate(prevProps) {
+        if (prevProps.id != this.props.id)
+            this.fetch(this.props.id);
+    };
 
     fetch = async (id) => {
         this.setState({
@@ -46,6 +43,7 @@ class ItemDataPage extends Component {
             <Fragment>
                 <Header/>
             <div className="fade-in">
+                {/* Положить сюда класс-компонент и посмотреть в его пропс, сравнить с пропсами класс-компонента, который используется роутером*/}
                 <h1 className="ml-150"><b>{movieData.vote_average}</b> {movieData.title} <ProgressBar isLoading = {fetchProgress}/></h1>
                 {
                     fetchDone &&

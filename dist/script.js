@@ -183,10 +183,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
- //trailing/trail slash
-//анимация css см. ссылку с templatemonster
-//сделать fade при переходе на конкретный фильм
-//fade при запуске сайта
+ //РЕШАТЬ КАТУ
+//все методы массивов/объектов
+//сделать обычную форму на html, на ноде сделать апи для получения формы, и туда отправить данные формы
+//this prototype
+//создать объект или класс или ф-цию конструктор и делать объектами родителями други объектов
+//бородатая лекция про dom
+//найти где спереть нормальный дизайн
+//
 
 const Pager = props => {
   let visiblePages = props.visiblePages;
@@ -240,7 +244,7 @@ const Pager = props => {
     })}`,
     className: "pager-item"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-    className: "fas fa-arrow-right"
+    className: "fa fa-arrow-right"
   })));
 };
 
@@ -59116,13 +59120,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Header */ "./components/Header.jsx");
 /* harmony import */ var _reach_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @reach/router */ "./node_modules/@reach/router/es/index.js");
-/* harmony import */ var qs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! qs */ "./node_modules/qs/lib/index.js");
-/* harmony import */ var qs__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(qs__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var lodash_isEqual__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! lodash/isEqual */ "./node_modules/lodash/isEqual.js");
-/* harmony import */ var lodash_isEqual__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(lodash_isEqual__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _components_ProgressBar__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/ProgressBar */ "./components/ProgressBar.jsx");
+/* harmony import */ var lodash_isEqual__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! lodash/isEqual */ "./node_modules/lodash/isEqual.js");
+/* harmony import */ var lodash_isEqual__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(lodash_isEqual__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _components_ProgressBar__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/ProgressBar */ "./components/ProgressBar.jsx");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 
 
 
@@ -59163,6 +59164,10 @@ class ItemDataPage extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
     this.fetch(this.props.id);
   }
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.id != this.props.id) this.fetch(this.props.id);
+  }
+
   render() {
     let {
       movieData,
@@ -59174,7 +59179,7 @@ class ItemDataPage extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       className: "fade-in"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
       className: "ml-150"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", null, movieData.vote_average), " ", movieData.title, " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_ProgressBar__WEBPACK_IMPORTED_MODULE_7__["ProgressBar"], {
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", null, movieData.vote_average), " ", movieData.title, " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_ProgressBar__WEBPACK_IMPORTED_MODULE_6__["ProgressBar"], {
       isLoading: fetchProgress
     })), fetchDone && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "item-details ml-50"

@@ -23,13 +23,15 @@
   grid-template-columns: 300px 300px 300px 300px 300px;
   grid-gap: 80px;
   margin-left: 50px;
-  margin-top: 50px;
-  transition: transform .3s; }
+  margin-top: 50px; }
   .gallery .gallery-item:hover {
     cursor: pointer; }
-  .gallery .gallery-item-img:hover {
+  .gallery .gallery-item-img {
     transition: transform .3s;
-    transform: scale(1.15); }
+    transform: scale(1); }
+    .gallery .gallery-item-img:hover {
+      transition: transform .3s;
+      transform: scale(1.05); }
   .gallery .gallery-text {
     font-family: vollkornregular;
     color: white;

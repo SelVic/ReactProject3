@@ -5,16 +5,17 @@
   grid-gap: 80px;
   margin-left: 50px;
   margin-top: 50px;
-  transition: transform .3s;
   .gallery-item{
     &:hover{
       cursor: pointer;
     }
   }
   .gallery-item-img{
+    transition: transform .3s;
+    transform: scale(1);
     &:hover{
       transition: transform .3s;
-      transform: scale(1.15);
+      transform: scale(1.05);
     }
   }
   .gallery-text{

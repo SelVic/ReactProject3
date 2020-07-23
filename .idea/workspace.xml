@@ -5,21 +5,11 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/styles.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/build/styles.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Header.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Item.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Item.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/Pager.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Pager.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/script.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/script.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/script.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/ItemDataPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/ItemDataPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/MainMoviePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/MainMoviePage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/start.js" beforeDir="false" afterPath="$PROJECT_DIR$/start.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/styles/_header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/_main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/styles/_main.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/styles/_moviegallery.scss" beforeDir="false" afterPath="$PROJECT_DIR$/styles/_moviegallery.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/_stylesheet1.scss" beforeDir="false" afterPath="$PROJECT_DIR$/styles/_stylesheet1.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/styles/styles.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +44,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JavaScript" />
     <property name="js.buildTools.gulp.gulp_package_dir" value="$PROJECT_DIR$/node_modules/gulp" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../tasks" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
@@ -209,7 +200,7 @@
       <workItem from="1594824773599" duration="5620000" />
       <workItem from="1594904100560" duration="12769000" />
       <workItem from="1595260435638" duration="1236000" />
-      <workItem from="1595497975808" duration="12911000" />
+      <workItem from="1595497975808" duration="21793000" />
     </task>
     <servers />
   </component>
@@ -225,22 +216,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="276" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1595518362538" />
-    <state width="1898" height="194" key="GridCell.Tab.0.bottom" timestamp="1595517877032">
+    <state width="1898" height="194" key="GridCell.Tab.0.bottom" timestamp="1595533380159">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1898" height="194" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1595517877032" />
-    <state width="1898" height="194" key="GridCell.Tab.0.center" timestamp="1595517877032">
+    <state width="1898" height="194" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1595533380159" />
+    <state width="1898" height="194" key="GridCell.Tab.0.center" timestamp="1595533380159">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1898" height="194" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1595517877032" />
-    <state width="1898" height="194" key="GridCell.Tab.0.left" timestamp="1595517877031">
+    <state width="1898" height="194" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1595533380159" />
+    <state width="1898" height="194" key="GridCell.Tab.0.left" timestamp="1595533380159">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1898" height="194" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1595517877031" />
-    <state width="1898" height="194" key="GridCell.Tab.0.right" timestamp="1595517877032">
+    <state width="1898" height="194" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1595533380159" />
+    <state width="1898" height="194" key="GridCell.Tab.0.right" timestamp="1595533380159">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1898" height="194" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1595517877032" />
+    <state width="1898" height="194" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1595533380159" />
     <state width="1898" height="342" key="GridCell.Tab.1.bottom" timestamp="1591123383850">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

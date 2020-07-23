@@ -5,11 +5,14 @@ import {Link} from "@reach/router";
 import first from "lodash/first";
 import last from "lodash/last";
 
-//trailing/trail slash
-//анимация css см. ссылку с templatemonster
-//сделать fade при переходе на конкретный фильм
-//fade при запуске сайта
-
+//РЕШАТЬ КАТУ
+//все методы массивов/объектов
+//сделать обычную форму на html, на ноде сделать апи для получения формы, и туда отправить данные формы
+//this prototype
+//создать объект или класс или ф-цию конструктор и делать объектами родителями други объектов
+//бородатая лекция про dom
+//найти где спереть нормальный дизайн
+//
 
 const Pager = props => {
     let visiblePages = props.visiblePages;
@@ -51,7 +54,7 @@ const Pager = props => {
                 pages.map(page => <Link to={`${location.pathname}?${qs.stringify({...search, page})}`} key={page} className = "pager-item">{page}</Link>)
             }
             {
-                RightPageButton && <Link to={`${location.pathname}?${qs.stringify({...search, page: currentPage + 1})}`} className = "pager-item"><i className="fas fa-arrow-right"/></Link>
+                RightPageButton && <Link to={`${location.pathname}?${qs.stringify({...search, page: currentPage + 1})}`} className = "pager-item"><i className="fa fa-arrow-right"/></Link>
             }
         </div>
     );
