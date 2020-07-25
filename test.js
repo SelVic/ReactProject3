@@ -1,20 +1,22 @@
 let list1 = [
-    { firstName: 'Sofia', lastName: 'I.', country: 'Argentina', continent: 'Americas', age: 35, language: 'Java' },
-    { firstName: 'Lukas', lastName: 'X.', country: 'Croatia', continent: 'Europe', age: 35, language: 'Python' },
-    { firstName: 'Madison', lastName: 'U.', country: 'United States', continent: 'Americas', age: 32, language: 'Ruby' }
+    { firstName: 'Mark', lastName: 'G.', country: 'Scotland', continent: 'Europe', age: 22, language: 'JavaScript' },
+    { firstName: 'Victoria', lastName: 'T.', country: 'Puerto Rico', continent: 'Americas', age: 30, language: 'Python' },
+    { firstName: 'Emma', lastName: 'B.', country: 'Norway', continent: 'Europe', age: 19, language: 'Clojure' }
 ];
 
-let a = list1.map(person => Object.assign(person, {greeting: "Hi "+ person.firstName + ", what do you like the most about " + person.language + "?"}))
-
-console.log(a)
-
-
-let list2 = [
-    { firstName: 'Emma', lastName: 'Z.', country: 'Netherlands', continent: 'Europe', age: 29, language: 'Ruby' },
-    { firstName: 'Piotr', lastName: 'B.', country: 'Poland', continent: 'Europe', age: 128, language: 'Javascript' },
-    { firstName: 'Jayden', lastName: 'P.', country: 'Jamaica', continent: 'Americas', age: 42, language: 'JavaScript' }
-];
-
-function isRubyComing(list) {
-    let a = list.forEach()
+function getFirstPython(list1) {
+    let name = "";
+    if (list1.some(person => person.language === "Python"))
+        name = list1.find(person => person.language ==="Python").firstName + ", " + list1.find(person => person.language === "Python").country
+    else
+        name = "There will be no Python developers";
+    return name
 }
+// норм решение
+// function getFirstPython(list) {
+//     const dev = list.find(x => x.language === "Python")
+//     return dev ? `${dev.firstName}, ${dev.country}` : "There will be no Python developers"
+// }
+
+
+console.log(getFirstPython(list1))
