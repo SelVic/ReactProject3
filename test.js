@@ -18,5 +18,6 @@ function getFirstPython(list1) {
 //     return dev ? `${dev.firstName}, ${dev.country}` : "There will be no Python developers"
 // }
 //
+//
 
 console.log(getFirstPython(list1))
