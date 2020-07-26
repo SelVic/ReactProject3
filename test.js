@@ -19,5 +19,6 @@ function getFirstPython(list1) {
 // }
 //
 //
+//
 
 console.log(getFirstPython(list1))
