@@ -5,14 +5,7 @@ import {Link} from "@reach/router";
 import first from "lodash/first";
 import last from "lodash/last";
 
-//РЕШАТЬ КАТУ
-//все методы массивов/объектов
-//сделать обычную форму на html, на ноде сделать апи для получения формы, и туда отправить данные формы
-//this prototype
-//создать объект или класс или ф-цию конструктор и делать объектами родителями други объектов
-//бородатая лекция про dom
-//найти где спереть нормальный дизайн
-//
+
 
 const Pager = props => {
     let visiblePages = props.visiblePages;
