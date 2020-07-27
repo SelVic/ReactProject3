@@ -12,6 +12,7 @@ function getFirstPython(list1) {
         name = "There will be no Python developers";
     return name
 }
+
 // норм решение
 // function getFirstPython(list) {
 //     const dev = list.find(x => x.language === "Python")
