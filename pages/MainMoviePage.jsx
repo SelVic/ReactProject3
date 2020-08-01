@@ -7,6 +7,7 @@ import {Item} from "../components/Item";
 import {Header} from "../components/Header";
 import {ProgressBar} from "../components/ProgressBar";
 
+//
 
 class MainMoviePage extends Component{
     state = {
