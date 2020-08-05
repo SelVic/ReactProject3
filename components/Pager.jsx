@@ -35,6 +35,7 @@ const Pager = props => {
 //                 break;
 //             }
 //             }
+    //
     /* domain.com/users/10/vasya?cat=1&page=2#hook */
     let LeftPageButton = first(pages) > 1;
     let RightPageButton = last(pages) < maxPages;
