@@ -28,15 +28,7 @@ const Pager = props => {
     for (let i = 0; i < visiblePages; ++i) {
         pages.push(i + start);
     }
-    //         switch (true) {
-//             case (leftHidden && !rightHidden): {
-//                 let extraPages = Paging(start - totalHidden, start - 1);
-//                 pages = [leftPageButton, ...extraPages, ...pages];
-//                 break;
-//             }
-//             }
-    //
-    /* domain.com/users/10/vasya?cat=1&page=2#hook */
+
     let LeftPageButton = first(pages) > 1;
     let RightPageButton = last(pages) < maxPages;
     return (
