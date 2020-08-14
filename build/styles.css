@@ -1,5 +1,7 @@
 .pager {
-  user-select: none; }
+  user-select: none;
+  align-items: center;
+  justify-content: center; }
   .pager .pager-item {
     width: 40px;
     height: 40px;
@@ -11,7 +13,8 @@
     justify-content: center;
     color: #333333;
     border: 2px solid black;
-    margin-left: 5px; }
+    margin-left: 5px;
+    text-decoration: none; }
     .pager .pager-item:hover {
       background-color: brown;
       color: #333;
@@ -26,12 +29,6 @@
   margin-top: 50px; }
   .gallery .gallery-item:hover {
     cursor: pointer; }
-  .gallery .gallery-item-img {
-    transition: transform .3s;
-    transform: scale(1); }
-    .gallery .gallery-item-img:hover {
-      transition: transform .3s;
-      transform: scale(1.05); }
   .gallery .gallery-text {
     font-family: vollkornregular;
     color: white;
@@ -80,8 +77,8 @@
 html {
   overflow-y: scroll;
   min-height: 100vh;
-  background: #797979;
-  background: radial-gradient(circle, #797979 0%, #363636 100%);
+  background-image: url("/images/wood2.png");
+  background-size: 110%;
   color: #fff; }
 
 body {
@@ -169,6 +166,30 @@ body {
 .mr-150 {
   margin-right: 150px; }
 
+.mb-300 {
+  margin-bottom: 300px; }
+
+.mt-300 {
+  margin-top: 300px; }
+
+.ml-300 {
+  margin-left: 300px; }
+
+.mr-300 {
+  margin-right: 300px; }
+
+.mb-800 {
+  margin-bottom: 800px; }
+
+.mt-800 {
+  margin-top: 800px; }
+
+.ml-800 {
+  margin-left: 800px; }
+
+.mr-800 {
+  margin-right: 800px; }
+
 .fade-in {
   animation: fadeIn ease 2s;
   -webkit-animation: fadeIn ease 2s; }
@@ -196,17 +217,25 @@ body {
   grid-gap: 80px;
   grid-template-columns: 1fr 1fr;
   font-size: 19px;
-  font-family: vollkornregular; }
+  font-family: vollkornregular;
+  padding: 5px; }
 
 .item {
-  text-decoration: none; }
+  text-decoration: none;
+  border-radius: 4px;
+  border: 3px solid #794228;
+  transition: transform .5s ease;
+  background-color: #b8733a; }
+  .item:hover {
+    transform: scale(1.2); }
   .item .item-text {
     font-family: vollkornregular;
     grid-template-columns: 30% 70%;
     display: grid;
-    color: white;
+    color: #34302c;
     font-size: 20px; }
     .item .item-text .item-text-ratio {
+      margin-left: 12px;
       font-size: 45px;
       font-weight: bold; }
 

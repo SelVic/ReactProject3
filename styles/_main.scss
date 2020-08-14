@@ -1,8 +1,10 @@
 html {
   overflow-y: scroll;
   min-height: 100vh;
-  background: rgb(121,121,121);
-  background: radial-gradient(circle, rgba(121,121,121,1) 0%, rgba(54,54,54,1) 100%);
+  background-image: url("/images/wood2.png");
+  background-size: 110%;
+  //background: rgb(121,121,121);
+  //background: radial-gradient(circle, rgba(121,121,121,1) 0%, rgba(54,54,54,1) 100%);
   color: #fff;
 }
 

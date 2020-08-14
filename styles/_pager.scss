@@ -1,5 +1,7 @@
 .pager {
   user-select: none;
+  align-items: center;
+  justify-content: center;
 
   .pager-item {
     width: 40px;
@@ -13,6 +15,7 @@
     color: #333333;
     border: 2px solid black;
     margin-left: 5px;
+    text-decoration: none;
 
 
     &:hover {

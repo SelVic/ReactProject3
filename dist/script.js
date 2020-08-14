@@ -143,7 +143,9 @@ const Item = props => {
     key: movie.id,
     to: `/movie/${movie.id}`
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    className: "gallery-item-img",
+    style: {
+      maxWidth: '100%'
+    },
     src: `https://image.tmdb.org/t/p/w300/${movie.poster_path}`,
     alt: ""
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -205,21 +207,12 @@ const Pager = props => {
 
   for (let i = 0; i < visiblePages; ++i) {
     pages.push(i + start);
-  } //         switch (true) {
-  //             case (leftHidden && !rightHidden): {
-  //                 let extraPages = Paging(start - totalHidden, start - 1);
-  //                 pages = [leftPageButton, ...extraPages, ...pages];
-  //                 break;
-  //             }
-  //             }
-
-  /* domain.com/users/10/vasya?cat=1&page=2#hook */
-
+  }
 
   let LeftPageButton = lodash_first__WEBPACK_IMPORTED_MODULE_4___default()(pages) > 1;
   let RightPageButton = lodash_last__WEBPACK_IMPORTED_MODULE_5___default()(pages) < maxPages;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "pager ml-30 mt-20"
+    className: "pager ml-800 mt-20"
   }, LeftPageButton && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reach_router__WEBPACK_IMPORTED_MODULE_3__["Link"], {
     to: `${location.pathname}?${qs__WEBPACK_IMPORTED_MODULE_2___default.a.stringify({ ...search,
       page: currentPage - 1
@@ -254,117 +247,7 @@ Pager.defaultProps = {
   itemAmount: 15,
   visiblePages: 5,
   total: 0
-}; //
-// const leftPageButton = "left";
-// const rightPageButton = "right";
-//
-// const Paging = (start, finish) =>{
-//     let i = start;
-//     const visibleRange = [];
-//     while (i <= finish)
-//     {
-//         visibleRange.push(i);
-//         i += 1;
-//     }
-//     return visibleRange;
-// }
-//
-//
-// class Pager extends Component {
-//     constructor(props) {
-//         super(props);
-//         let total = null;
-//         let sides = 2;
-//         let current = 1;
-//     }
-//
-//     getPageNumbers = () => {
-//         let start = 1;
-//         let total = this.total;
-//         let sides = this.sides;
-//         let pageSize = this.pageSize;
-//         let totalVisible = (this.total*2) + 1;
-//         let totalPages = Math.ceil(total / pageSize);
-//         let pages = Paging(1,20)  ;
-//         let leftHidden = start > 2;
-//         let rightHidden = (total - endPage) > 1;
-//         let totalHidden = totalVisible - (pages.length + 1)
-//
-//         switch (true) {
-//             case (leftHidden && !rightHidden): {
-//                 let extraPages = Paging(start - totalHidden, start - 1);
-//                 pages = [leftPageButton, ...extraPages, ...pages];
-//                 break;
-//             }
-//             case (!leftHidden && rightHidden): {
-//                 const extraPages = Paging(endPage + 1, endPage + totalHidden);
-//                 pages = [...pages, ...extraPages, rightPageButton];
-//                 break;
-//             }
-//             case (leftHidden && rightHidden):
-//             default: {
-//                 pages = [leftPageButton, ...pages, rightPageButton];
-//                 break;
-//             }
-//             }
-//         return [1,...pages,totalPages]
-//     }
-//
-//     render() {
-//         let pages = this.props.pages;
-//         return (
-//             <div>
-//                 {
-//                     leftPageButton && pages.map((p, i) => <Fragment key={p}><Link to={`/?page=${p}`}>{p}</Link>{"  "} </Fragment>)
-//                 }
-//                 {
-//                     pages.map((p, i) => <Fragment key={p}><Link to={`/?page=${p}`}>{p}</Link>{"  "} </Fragment>)
-//                 }
-//                 {
-//                     rightPageButton && pages.map((p, i) => <Fragment key={p}><Link to={`/?page=${p}`}>{p}</Link>{"  "} </Fragment>)
-//                 }
-//                 <div className="myFont">{this.props.current} {this.props.total}</div>
-//             </div>
-//         )
-//     }
-// }
-//
-// Pager.defaultProps = {
-//     pages :[1,2,3,4,5,6,7,8,9,10],
-//     firstPage : 1,
-//     total : 20,
-//     current : 1,
-//     pageSize: 4,
-//     pagerSize: 5
-// }
-//
-// Pager.propTypes = {
-// }
-
-
-
-/***/ }),
-
-/***/ "./components/ProgressBar.jsx":
-/*!************************************!*\
-  !*** ./components/ProgressBar.jsx ***!
-  \************************************/
-/*! exports provided: ProgressBar */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProgressBar", function() { return ProgressBar; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-
-
-const ProgressBar = props => props.isLoading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-  className: "progress"
-}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-  className: "fas fa-compact-disc fa-spin"
-})) : null;
-
+};
 
 
 /***/ }),
@@ -59115,12 +58998,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Header */ "./components/Header.jsx");
 /* harmony import */ var _reach_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @reach/router */ "./node_modules/@reach/router/es/index.js");
-/* harmony import */ var lodash_isEqual__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! lodash/isEqual */ "./node_modules/lodash/isEqual.js");
-/* harmony import */ var lodash_isEqual__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(lodash_isEqual__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _components_ProgressBar__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/ProgressBar */ "./components/ProgressBar.jsx");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-
 
 
 
@@ -59174,9 +59052,7 @@ class ItemDataPage extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       className: "fade-in"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
       className: "ml-150"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", null, movieData.vote_average), " ", movieData.title, " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_ProgressBar__WEBPACK_IMPORTED_MODULE_6__["ProgressBar"], {
-      isLoading: fetchProgress
-    })), fetchDone && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", null, movieData.vote_average), " ", movieData.title), fetchDone && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "item-details ml-50"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, movieData.overview), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "\u0414\u043B\u0438\u0442\u0435\u043B\u044C\u043D\u043E\u0441\u0442\u044C:"), " ", movieData.runtime, " \u043C\u0438\u043D\u0443\u0442"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "\u041F\u043E\u043F\u0443\u043B\u044F\u0440\u043D\u043E\u0441\u0442\u044C:"), " ", movieData.popularity), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "\u0414\u0430\u0442\u0430 \u0432\u044B\u0445\u043E\u0434\u0430:"), " ", moment__WEBPACK_IMPORTED_MODULE_2___default()(movieData.release_date).format("DD MMMM YYYY"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
       style: {
@@ -59222,9 +59098,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Pager__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Pager */ "./components/Pager.jsx");
 /* harmony import */ var _components_Item__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Item */ "./components/Item.jsx");
 /* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/Header */ "./components/Header.jsx");
-/* harmony import */ var _components_ProgressBar__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/ProgressBar */ "./components/ProgressBar.jsx");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 
 
 
@@ -59278,20 +59152,13 @@ class MainMoviePage extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
     let newLocation = qs__WEBPACK_IMPORTED_MODULE_1___default.a.parse(this.props.location.search, {
       ignoreQueryPrefix: true
     });
-    if (
-    /*(oldQuery != newQuery)*/
-    !lodash_isEqual__WEBPACK_IMPORTED_MODULE_2___default()(oldLocation, newLocation)) this.fetch({
+    if (!lodash_isEqual__WEBPACK_IMPORTED_MODULE_2___default()(oldLocation, newLocation)) this.fetch({
       page: newLocation.page
     });
   }
 
   render() {
-    /*
-    * let total = this.state.total;
-    * let curr = this.state.curr;
-    * */
     let {
-      fetchProgress,
       items,
       page,
       total
@@ -59299,8 +59166,6 @@ class MainMoviePage extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Header__WEBPACK_IMPORTED_MODULE_6__["Header"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Pager__WEBPACK_IMPORTED_MODULE_4__["Pager"], {
       total: total,
       currentPage: page
-    }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_ProgressBar__WEBPACK_IMPORTED_MODULE_7__["ProgressBar"], {
-      isLoading: fetchProgress
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "gallery fade-in"
     }, items.map(mov => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Item__WEBPACK_IMPORTED_MODULE_5__["Item"], {

@@ -5,7 +5,6 @@ import {moviesApi} from "../moviesApi";
 import {Pager} from "../components/Pager";
 import {Item} from "../components/Item";
 import {Header} from "../components/Header";
-import {ProgressBar} from "../components/ProgressBar";
 
 
 class MainMoviePage extends Component{
@@ -40,20 +39,16 @@ class MainMoviePage extends Component{
     componentDidUpdate(prevProps) {
         let oldLocation = qs.parse(prevProps.location.search, {ignoreQueryPrefix: true});
         let newLocation = qs.parse(this.props.location.search, {ignoreQueryPrefix: true});
-        if /*(oldQuery != newQuery)*/ (!isEqual(oldLocation,newLocation))
+        if (!isEqual(oldLocation,newLocation))
             this.fetch({page: newLocation.page});
     };
 
     render(){
-        /*
-        * let total = this.state.total;
-        * let curr = this.state.curr;
-        * */
-        let {fetchProgress, items, page, total} = this.state;
+        let {items, page, total} = this.state;
         return (
             <Fragment>
                 <Header/>
-                <Pager total={total} currentPage={page}/> <ProgressBar isLoading = {fetchProgress}/>
+                <Pager total={total} currentPage={page}/>
                 <div className = "gallery fade-in">
                     {
                         items.map(mov => <Item key = {mov.id} movie = {mov} width = "100%" className = "gallery-item"/>)

@@ -3,8 +3,6 @@ import {moviesApi} from "../moviesApi";
 import moment from "moment";
 import {Header} from "../components/Header";
 import {Link} from "@reach/router";
-import isEqual from "lodash/isEqual";
-import {ProgressBar} from "../components/ProgressBar";
 
 class ItemDataPage extends Component {
     state = {
@@ -43,8 +41,7 @@ class ItemDataPage extends Component {
             <Fragment>
                 <Header/>
             <div className="fade-in">
-                {/* Положить сюда класс-компонент и посмотреть в его пропс, сравнить с пропсами класс-компонента, который используется роутером*/}
-                <h1 className="ml-150"><b>{movieData.vote_average}</b> {movieData.title} <ProgressBar isLoading = {fetchProgress}/></h1>
+                <h1 className="ml-150"><b>{movieData.vote_average}</b> {movieData.title}</h1>
                 {
                     fetchDone &&
                     <Fragment>

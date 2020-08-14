@@ -4,16 +4,25 @@
   grid-template-columns: 1fr 1fr;
   font-size: 19px;
   font-family: vollkornregular;
+  padding: 5px;
 }
 .item{
   text-decoration: none;
+  border-radius: 4px;
+  border: 3px solid #794228;
+  transition: transform .5s ease;
+  background-color: #b8733a;
+  &:hover{
+    transform: scale(1.2);
+  }
   .item-text{
     font-family: vollkornregular;
     grid-template-columns: 30% 70%;
     display: grid;
-    color:white;
+    color: #34302c;
     font-size:20px;
     .item-text-ratio{
+      margin-left: 12px;
       font-size: 45px;
       font-weight: bold;
     }

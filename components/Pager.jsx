@@ -32,7 +32,7 @@ const Pager = props => {
     let LeftPageButton = first(pages) > 1;
     let RightPageButton = last(pages) < maxPages;
     return (
-        <div className="pager ml-30 mt-20">
+        <div className="pager ml-800 mt-20">
             {
                 LeftPageButton && <Link to={`${location.pathname}?${qs.stringify({...search, page: currentPage - 1})}`} className = "pager-item"><i className="fa fa-arrow-left"/></Link>
             }
