@@ -224,8 +224,8 @@ const Pager = props => {
     to: `${location.pathname}?${qs__WEBPACK_IMPORTED_MODULE_2___default.a.stringify({ ...search,
       page
     })}`,
-    key: page,
-    className: "pager-item"
+    className: `pager-item ${page === currentPage ? 'active' : ''}`,
+    key: page
   }, page)), RightPageButton && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reach_router__WEBPACK_IMPORTED_MODULE_3__["Link"], {
     to: `${location.pathname}?${qs__WEBPACK_IMPORTED_MODULE_2___default.a.stringify({ ...search,
       page: currentPage + 1

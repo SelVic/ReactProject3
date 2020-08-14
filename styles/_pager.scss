@@ -9,19 +9,24 @@
     display: inline-flex;
     border-radius: 15px;
     font-weight: bolder;
-    background-color: darkgrey;
+    background-color: #dac6b4;
     align-items: center;
     justify-content: center;
-    color: #333333;
+    color: #444444;
     border: 2px solid black;
     margin-left: 5px;
     text-decoration: none;
+    transition: background-color 200ms;
 
 
     &:hover {
-      background-color: brown;
-      color: #333;
+      transition: background-color 200ms;
+      background-color: #b44346;
       cursor: pointer;
+    }
+    &.active{
+      transition: background-color 200ms;
+      background-color: #b44346;
     }
   }
 }

@@ -13,6 +13,7 @@
   transition: transform .5s ease;
   background-color: #b8733a;
   &:hover{
+    cursor: pointer;
     transform: scale(1.2);
   }
   .item-text{
