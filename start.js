@@ -14,15 +14,6 @@ app.get(['/', '/user', "/movie/:id"], function(req, res) {
     res.sendFile(__dirname + '/index.html');
 });
 
-app.get('/rat', function (req, res, next) {
-    next()
-})
-
-app.get('/vodka', function (req, res, next) {
-    return res.send("otvet")
-    console.log('privet')
-})
-
 app.get('/error', function (req, res, next) {
     next('404040')
 })
