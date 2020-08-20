@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script>
+        (miliseconds =>{
+            let currentTime = new Date().getTime();
+            while (currentTime + miliseconds >= new Date().getTime()) {}
+        })(10000)
+    </script>
     <meta charset="UTF-8">
     <title>MovieProj</title>
     <link rel="shortcut icon" href="images/favicon.png" type="image/png">

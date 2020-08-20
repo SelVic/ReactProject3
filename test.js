@@ -12,3 +12,5 @@
 //     }
 //     return maxDiff;
 // }
+
+let a = /abc/;
