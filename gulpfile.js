@@ -54,5 +54,4 @@ gulp.task('watch', gulp.series('styles', function () {
            gulp.series('styles'));
 }));
 
-gulp.task('build', gulp.series('styles'));
 
