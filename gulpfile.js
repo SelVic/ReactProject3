@@ -9,15 +9,13 @@ let gulp = require('gulp'),
 let styles = ['styles/styles.scss'],
     destination = 'build';
 
-let test = ['test.js'],
-    destination1 = 'build/testDest';
 
-gulp.task('test', function () {
-    return gulp.src(test)
-        .pipe(sourcemaps.init())
-        .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest(destination1));
-})
+// gulp.task('test', function () {
+//     return gulp.src(test)
+//         .pipe(sourcemaps.init())
+//         .pipe(sourcemaps.write('.'))
+//         .pipe(gulp.dest(destination1));
+// })
 
 gulp.task('clean', function () {
     return del(['build/*'])
