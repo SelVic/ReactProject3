@@ -17,11 +17,7 @@ app.get(['/', '/user', "/movie/:id"], function(req, res) {
 app.get('/error', function (req, res, next) {
     next('404040')
 })
-//
-app.get ('/test', function (req,res, next) {
-    return res.send(req.header('Pragma'))
-    console.log(req.header('Content-type'))
-})
+
 app.get ('/test2', function (req,res, next) {
     res.set('Content-type', 'text-html')
     return res.send(req.header('Content-type'))
