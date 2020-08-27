@@ -18,11 +18,6 @@ app.get('/error', function (req, res, next) {
     next('404040')
 })
 
-// app.get ('/test2', function (req,res, next) {
-//     res.set('Content-type', 'text-html')
-//     return res.send(req.header('Content-type'))
-//     console.log(req.header('Content-type'))
-// })
 
 app.get('*', function (req, res, next) {
     console.log(`404 ${req.url}`)
